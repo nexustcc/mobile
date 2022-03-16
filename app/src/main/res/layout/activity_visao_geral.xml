@@ -64,7 +64,8 @@
             android:layout_margin="15dp"
             android:text="Tema do Projeto"
             android:textColor="@color/grey_3"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -95,7 +96,8 @@
             android:layout_margin="15dp"
             android:text="Descrição do Projeto"
             android:textColor="@color/grey_3"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -128,7 +130,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
+            android:layout_marginStart="100dp"
             android:layout_marginTop="20dp"
             android:text="TRAB. TEÓRICO NEXUS"
             android:textColor="@color/white"
@@ -138,7 +140,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="80dp"
+            android:layout_marginStart="100dp"
             android:layout_marginTop="45dp"
             android:text="TAMANHO: 3 MB."
             android:textColor="@color/white"
@@ -148,7 +150,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/ic_salvar"
-            android:layout_marginLeft="300dp"
+            android:layout_marginLeft="290dp"
             android:layout_marginTop="30dp"/>
 
     </com.google.android.material.card.MaterialCardView>

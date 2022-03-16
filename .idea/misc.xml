@@ -9,6 +9,7 @@
         <entry key="app/src/main/res/drawable/ic_email.xml" value="0.491" />
         <entry key="app/src/main/res/drawable/ic_headerr.xml" value="0.491" />
         <entry key="app/src/main/res/drawable/ic_icone_grupos.xml" value="0.491" />
+        <entry key="app/src/main/res/drawable/ic_icone_visao_geral.xml" value="0.491" />
         <entry key="app/src/main/res/drawable/ic_image_1.xml" value="0.491" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.491" />
         <entry key="app/src/main/res/drawable/ic_launcher_login.xml" value="0.491" />
@@ -24,6 +25,7 @@
         <entry key="app/src/main/res/layout/activity_listagem_grupos.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.5911458333333334" />
+        <entry key="app/src/main/res/layout/activity_menu.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/activity_visao_geral.xml" value="0.5192708333333333" />
         <entry key="app/src/main/res/layout/container_grupos.xml" value="0.5" />
