@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+        <item
+           android:id="@+id/item_menu_visao_geral"
+            android:title="VISÃO GERAL"
+            android:icon="@drawable/ic_icone_visao_geral"/>
+
+        <item
+            android:id="@+id/item_menu_integrantes"
+            android:icon="@drawable/ic_icone_visao_geral"
+            android:title="INTEGRANTES" />
+
+        <item
+            android:id="@+id/item_menu_formulário"
+            android:icon="@drawable/ic_icone_visao_geral"
+            android:title="FORMULÁRIO" />
+
+
+
+
+</menu>

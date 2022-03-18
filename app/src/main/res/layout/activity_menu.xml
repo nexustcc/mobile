@@ -32,16 +32,16 @@
             android:textSize="24sp"
             android:textStyle="bold" />
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="500dp"
-            android:layout_height="100dp"
+            android:layout_height="400dp"
             android:layout_marginTop="260dp">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_icone_visao_geral"
-                android:layout_marginStart="130dp" />
+                android:layout_marginStart="140dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -49,27 +49,36 @@
                 android:text="VISÃO GERAL"
                 android:textColor="@color/blue_4"
                 android:textStyle="bold"
-                android:layout_marginStart="10dp"/>
+                android:layout_marginStart="165dp"/>
 
-        </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INTEGRANTES"
+                android:layout_marginStart="165dp"
+                android:layout_marginTop="30dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="INTEGRANTES"
-            android:layout_marginStart="163dp"
-            android:layout_marginTop="310dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="165dp"
+                android:layout_marginTop="60dp"
+                android:text="FORMULÁRIO"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="165dp"
-            android:layout_marginTop="350dp"
-            android:text="FORMULÁRIO"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+
+
+
+
+
+
 
 
     </RelativeLayout>
