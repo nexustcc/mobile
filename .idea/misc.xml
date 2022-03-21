@@ -13,6 +13,7 @@
         <entry key="app/src/main/res/drawable/ic_icone_grupos.xml" value="0.491" />
         <entry key="app/src/main/res/drawable/ic_icone_visao_geral.xml" value="0.491" />
         <entry key="app/src/main/res/drawable/ic_image_1.xml" value="0.491" />
+        <entry key="app/src/main/res/drawable/ic_integrantes.xml" value="0.491" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.491" />
         <entry key="app/src/main/res/drawable/ic_launcher_login.xml" value="0.491" />
         <entry key="app/src/main/res/drawable/ic_launcher_splashscreen.xml" value="0.491" />
@@ -27,6 +28,10 @@
         <entry key="app/src/main/res/drawable/sombra_card_view.xml" value="0.491" />
         <entry key="app/src/main/res/drawable/splashscreen.xml" value="0.491" />
         <entry key="app/src/main/res/drawable/teste.xml" value="0.4475" />
+        <entry key="app/src/main/res/layout/activity_formulario.xml" value="0.5177083333333333" />
+        <entry key="app/src/main/res/layout/activity_formulario2.xml" value="0.5036458333333333" />
+        <entry key="app/src/main/res/layout/activity_formularioo.xml" value="0.5036458333333333" />
+        <entry key="app/src/main/res/layout/activity_integrantes.xml" value="0.5177083333333333" />
         <entry key="app/src/main/res/layout/activity_listagem_grupos.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.5911458333333334" />

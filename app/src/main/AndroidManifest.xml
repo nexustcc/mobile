@@ -10,16 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NEXUSTCC">
         <activity
+            android:name=".Formulario"
+            android:exported="false" />
+        <activity
+            android:name=".Integrantes"
+            android:exported="false" />
+        <activity
             android:name=".Login"
             android:exported="true" />
         <activity
             android:name=".Menu"
             android:exported="false" />
         <activity
-            android:name=".VisaoGeral"
+            android:name=".ListagemGrupos"
             android:exported="false" />
         <activity
-            android:name=".ListagemGrupos"
+            android:name=".menu2"
             android:exported="false" />
         <activity
             android:name=".SplashScreenActivity"
@@ -28,7 +34,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".menu2"
+            android:name=".VisaoGeral"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

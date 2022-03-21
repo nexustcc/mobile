@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Formulario">
+
+    <TableLayout
+        >
+
+    <LinearLayout
+        android:layout_width="00dp"
+        android:layout_height="80dp"
+        tools:ignore="MissingConstraints">
+
+        <RelativeLayout
+            android:layout_width="414dp"
+            android:layout_height="80dp"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/ic_hamburguer_menu"></ImageView>
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="NEXUS TCC"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+   <TableRow
+        android:gravity="center"
+       android:padding="10dp"
+       >
+       <TextView
+           android:text="CRITÉRIOS"
+           android:padding="3dip"
+           android:layout_margin="2dip"
+           />
+       <TextView
+           android:text="RUIM"
+           android:padding="3dip"
+           android:gravity="right" />
+       <TextView
+           android:text="REGULAR"
+           android:padding="3dip"
+           android:gravity="right" />
+       <TextView
+           android:text="ÓTIMO"
+           android:padding="3dip"
+           android:gravity="right" />
+
+   </TableRow>
+
+    //clareza
+    <TableRow
+        android:gravity="center"
+        android:padding="10dp">
+        <TextView
+            android:text="Clareza"
+            android:padding="3dip" />
+
+        <CheckBox></CheckBox>
+        <CheckBox ></CheckBox>
+        <CheckBox></CheckBox>
+
+    </TableRow>
+
+    //objetividade
+    <TableRow
+        android:gravity="center"
+        android:padding="10dp">
+        <TextView
+            android:text="Objetividade"
+            android:padding="3dip" />
+
+        <CheckBox></CheckBox>
+        <CheckBox></CheckBox>
+        <CheckBox></CheckBox>
+
+    </TableRow>
+
+        //fluência na Exposição de Ideias
+        <TableRow
+            android:gravity="center"
+            android:padding="10dp">
+            <TextView
+                android:text="Fluência na Exposição de Ideias"
+                android:padding="3dip" />
+
+            <CheckBox></CheckBox>
+            <CheckBox></CheckBox>
+            <CheckBox></CheckBox>
+
+        </TableRow>
+
+        //domínio de conteúdo
+        <TableRow
+            android:gravity="center"
+            android:padding="10dp">
+            <TextView
+                android:text="Domínio de Conteúdo"
+                android:padding="3dip" />
+
+            <CheckBox></CheckBox>
+            <CheckBox></CheckBox>
+            <CheckBox></CheckBox>
+
+        </TableRow>
+
+        //capacidade de comunicação
+        <TableRow
+            android:gravity="center"
+            android:padding="10dp">
+            <TextView
+                android:text="Capacidade de Comunicação"
+                android:padding="3dip" />
+
+            <CheckBox></CheckBox>
+            <CheckBox></CheckBox>
+            <CheckBox></CheckBox>
+
+        </TableRow>
+
+        //argumentação
+        <TableRow
+            android:gravity="center"
+            android:padding="10dp">
+            <TextView
+                android:text="Argumentação"
+                android:padding="3dip" />
+
+            <CheckBox></CheckBox>
+            <CheckBox></CheckBox>
+            <CheckBox></CheckBox>
+
+        </TableRow>
+
+        //organização da apresentação
+        <TableRow
+            android:gravity="center"
+            android:padding="10dp">
+            <TextView
+                android:text="Organização da Apresentação"
+                android:padding="3dip" />
+
+            <CheckBox></CheckBox>
+            <CheckBox></CheckBox>
+            <CheckBox></CheckBox>
+
+        </TableRow>
+
+        //utilização dos recursos
+        <TableRow
+            android:gravity="center"
+            android:padding="10dp">
+            <TextView
+                android:text="Utilização dos Recursos"
+                android:padding="3dip" />
+
+            <CheckBox></CheckBox>
+            <CheckBox></CheckBox>
+            <CheckBox></CheckBox>
+
+        </TableRow>
+
+        //postura dos integrantes
+        <TableRow
+            android:gravity="center"
+            android:padding="10dp">
+            <TextView
+                android:text="Postura dos Integrantes"
+                android:padding="3dip" />
+
+            <CheckBox></CheckBox>
+            <CheckBox></CheckBox>
+            <CheckBox></CheckBox>
+
+        </TableRow>
+
+        //uso do tempo
+        <TableRow
+            android:gravity="center"
+            android:padding="10dp">
+            <TextView
+                android:text="Uso do Tempo"
+                android:padding="3dip" />
+
+            <CheckBox></CheckBox>
+            <CheckBox></CheckBox>
+            <CheckBox></CheckBox>
+
+        </TableRow>
+
+        //observações
+        <TableRow
+            android:gravity="center"
+            android:padding="10dp">
+            <EditText
+                android:text="Uso do Tempo"
+                android:padding="3dip" />
+
+            <CheckBox></CheckBox>
+            <CheckBox></CheckBox>
+            <CheckBox></CheckBox>
+
+        </TableRow>
+
+    </TableLayout>
+
+</TableLayout>
