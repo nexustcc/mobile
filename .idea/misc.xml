@@ -11,6 +11,7 @@
         <entry key="app/src/main/res/drawable/customizacao_checkbox.xml" value="0.2245" />
         <entry key="app/src/main/res/drawable/formulario.xml" value="0.229" />
         <entry key="app/src/main/res/drawable/ic_email.xml" value="0.491" />
+        <entry key="app/src/main/res/drawable/ic_formulario.xml" value="0.253" />
         <entry key="app/src/main/res/drawable/ic_hamburguer_menu.xml" value="0.3375" />
         <entry key="app/src/main/res/drawable/ic_header_menu.xml" value="0.3375" />
         <entry key="app/src/main/res/drawable/ic_headerr.xml" value="0.491" />
@@ -36,7 +37,7 @@
         <entry key="app/src/main/res/drawable/teste.xml" value="0.4475" />
         <entry key="app/src/main/res/drawable/unchecked.xml" value="0.2245" />
         <entry key="app/src/main/res/layout/activity_container_grupos.xml" value="0.5770833333333333" />
-        <entry key="app/src/main/res/layout/activity_formulario.xml" value="0.45" />
+        <entry key="app/src/main/res/layout/activity_formulario.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_formulario2.xml" value="0.5036458333333333" />
         <entry key="app/src/main/res/layout/activity_formularioo.xml" value="0.5036458333333333" />
         <entry key="app/src/main/res/layout/activity_integrantes.xml" value="0.5177083333333333" />
