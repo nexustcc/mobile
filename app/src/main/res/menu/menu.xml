@@ -5,17 +5,22 @@
         <item
            android:id="@+id/item_menu_visao_geral"
             android:title="VISÃO GERAL"
-            android:icon="@drawable/ic_visao_geral"/>
+            android:icon="@drawable/ic_visao_geral"
+            android:onClick="onNavigationItemSelected"/>
 
         <item
             android:id="@+id/item_menu_integrantes"
             android:icon="@drawable/ic_integrantes"
-            android:title="INTEGRANTES" />
+            android:title="INTEGRANTES"
+            android:onClick="onNavigationItemSelected"/>
+        />
 
         <item
             android:id="@+id/item_menu_formulário"
             android:icon="@drawable/ic_formulario"
-            android:title="FORMULÁRIO" />
+            android:title="FORMULÁRIO"
+            android:onClick="onNavigationItemSelected"/>
+        />
 
 
 

@@ -49,11 +49,12 @@
         <entry key="app/src/main/res/layout/activity_menu.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/activity_menu2.xml" value="0.40208333333333335" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.5911458333333334" />
-        <entry key="app/src/main/res/layout/activity_visao_geral.xml" value="0.5192708333333333" />
+        <entry key="app/src/main/res/layout/activity_visao_geral.xml" value="0.37142857142857144" />
         <entry key="app/src/main/res/layout/container_grupos.xml" value="0.5" />
         <entry key="app/src/main/res/layout/menu_header.xml" value="0.4161458333333333" />
         <entry key="app/src/main/res/layout/nav_header_menu.xml" value="0.4161458333333333" />
-        <entry key="app/src/main/res/menu/menu.xml" value="0.4161458333333333" />
+        <entry key="app/src/main/res/layout/toolbar.xml" value="0.4666666666666667" />
+        <entry key="app/src/main/res/menu/menu.xml" value="0.1" />
       </map>
     </option>
   </component>

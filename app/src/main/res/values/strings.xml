@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NEXUSTCC</string>
+    <string name="abrir_drawer">Abrir</string>
+    <string name="fechar_drawer">Fechar</string>
 </resources>
