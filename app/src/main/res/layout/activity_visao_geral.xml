@@ -17,6 +17,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:id="@+id/ic_hamburguer_menu"
             android:layout_width="16dp"
             android:layout_height="14dp"
             android:layout_marginStart="20dp"

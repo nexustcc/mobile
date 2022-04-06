@@ -82,6 +82,7 @@ public class VisaoGeral extends AppCompatActivity  implements NavigationView.OnN
         } else {
             super.onBackPressed();
         }
+
     }
     }
 

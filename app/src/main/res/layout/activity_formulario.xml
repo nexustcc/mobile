@@ -55,6 +55,8 @@
 
             </LinearLayout>
 
+
+
             //clareza
 
             <TableRow
@@ -247,17 +249,17 @@
                     android:textStyle="bold"/>
 
                 <CheckBox
-                    android:id="@+id/text_capacidade_comunicacao_1"
+                    android:id="@+id/cb_capacidade_comunicacao_1"
                     android:button="@drawable/customizacao_checkbox"
                     ></CheckBox>
                 <CheckBox
-                    android:id="@+id/text_capacidade_comunicacao_2"
+                    android:id="@+id/cb_capacidade_comunicacao_2"
                     android:button="@drawable/customizacao_checkbox"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     ></CheckBox>
                 <CheckBox
-                    android:id="@+id/text_capacidade_comunicacao_3"
+                    android:id="@+id/cb_capacidade_comunicacao_3"
                     android:button="@drawable/customizacao_checkbox"
                     ></CheckBox>
 
@@ -275,17 +277,17 @@
                     android:textStyle="bold"/>
 
                 <CheckBox
-                    android:id="@+id/text_argumemtacao_1"
+                    android:id="@+id/cb_argumemtacao_1"
                     android:button="@drawable/customizacao_checkbox"
                     ></CheckBox>
                 <CheckBox
-                    android:id="@+id/text_argumemtacao_2"
+                    android:id="@+id/cb_argumemtacao_2"
                     android:button="@drawable/customizacao_checkbox"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     ></CheckBox>
                 <CheckBox
-                    android:id="@+id/text_argumemtacao_3"
+                    android:id="@+id/cb_argumemtacao_3"
                     android:button="@drawable/customizacao_checkbox"
                     ></CheckBox>
 
@@ -305,17 +307,17 @@
 
                 <CheckBox
 
-                    android:id="@+id/text_organizacao_apresentacao_1"
+                    android:id="@+id/cb_organizacao_apresentacao_1"
                     android:button="@drawable/customizacao_checkbox"
                     ></CheckBox>
                 <CheckBox
-                    android:id="@+id/text_organizacao_apresentacao_2"
+                    android:id="@+id/cb_organizacao_apresentacao_2"
                     android:button="@drawable/customizacao_checkbox"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     ></CheckBox>
                 <CheckBox
-                    android:id="@+id/text_organizacao_apresentacao_3"
+                    android:id="@+id/cb_organizacao_apresentacao_3"
                     android:button="@drawable/customizacao_checkbox"
                     ></CheckBox>
 
@@ -334,17 +336,17 @@
                     android:textStyle="bold"/>
 
                 <CheckBox
-                    android:id="@+id/text_utilizacao_recursos_1"
+                    android:id="@+id/cb_utilizacao_recursos_1"
                     android:button="@drawable/customizacao_checkbox"
                     ></CheckBox>
                 <CheckBox
-                    android:id="@+id/text_utilizacao_recursos_2"
+                    android:id="@+id/cb_utilizacao_recursos_2"
                     android:button="@drawable/customizacao_checkbox"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     ></CheckBox>
                 <CheckBox
-                    android:id="@+id/text_utilizacao_recursos_3"
+                    android:id="@+id/cb_utilizacao_recursos_3"
                     android:button="@drawable/customizacao_checkbox"
                     ></CheckBox>
 
@@ -362,17 +364,17 @@
                     android:padding="3dip" />
 
                 <CheckBox
-                    android:id="@+id/text_postura_integrantes_1"
+                    android:id="@+id/cb_postura_integrantes_1"
                     android:button="@drawable/customizacao_checkbox"
                     ></CheckBox>
                 <CheckBox
-                    android:id="@+id/text_postura_integrantes_2"
+                    android:id="@+id/cb_postura_integrantes_2"
                     android:button="@drawable/customizacao_checkbox"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     ></CheckBox>
                 <CheckBox
-                    android:id="@+id/text_postura_integrantes_3"
+                    android:id="@+id/cb_postura_integrantes_3"
                     android:button="@drawable/customizacao_checkbox"
                     ></CheckBox>
 
@@ -390,17 +392,17 @@
                     android:textStyle="bold"/>
 
                 <CheckBox
-                    android:id="@+id/text_uso_do_tempo_1"
+                    android:id="@+id/cb_uso_do_tempo_1"
                     android:button="@drawable/customizacao_checkbox"
                     ></CheckBox>
                 <CheckBox
-                    android:id="@+id/text_uso_do_tempo_2"
+                    android:id="@+id/cb_uso_do_tempo_2"
                     android:button="@drawable/customizacao_checkbox"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
                     ></CheckBox>
                 <CheckBox
-                    android:id="@+id/text_uso_do_tempo_3"
+                    android:id="@+id/cb_uso_do_tempo_3"
                     android:button="@drawable/customizacao_checkbox"
                     ></CheckBox>
 
@@ -426,7 +428,6 @@
 
             </TableRow>
 
-
             <Button
                 android:layout_width="354dp"
                 android:layout_height="wrap_content"
@@ -437,6 +438,8 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"></Button>
+
+
 
 
 

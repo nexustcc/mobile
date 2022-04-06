@@ -16,7 +16,7 @@
             android:name=".ContainerGrupos"
             android:exported="false" />
         <activity
-            android:name=".Formulario"
+            android:name=".VisaoGeral"
             android:exported="false" />
         <activity
             android:name=".Integrantes"
@@ -34,7 +34,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".VisaoGeral"
+            android:name=".Formulario"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
