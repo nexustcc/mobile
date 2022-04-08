@@ -19,8 +19,8 @@
             android:id="@+id/item_menu_formulário"
             android:icon="@drawable/ic_formulario"
             android:title="FORMULÁRIO"
-            android:onClick="onNavigationItemSelected"/>
-        />
+            />
+
 
 
 

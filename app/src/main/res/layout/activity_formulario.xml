@@ -294,7 +294,10 @@
             </TableRow>
 
             //organização da apresentação
+
             <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:padding="10dp">
 
@@ -308,18 +311,17 @@
                 <CheckBox
 
                     android:id="@+id/cb_organizacao_apresentacao_1"
-                    android:button="@drawable/customizacao_checkbox"
-                    ></CheckBox>
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
                 <CheckBox
                     android:id="@+id/cb_organizacao_apresentacao_2"
-                    android:button="@drawable/customizacao_checkbox"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
-                    ></CheckBox>
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
                 <CheckBox
                     android:id="@+id/cb_organizacao_apresentacao_3"
-                    android:button="@drawable/customizacao_checkbox"
-                    ></CheckBox>
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
             </TableRow>
 
@@ -438,9 +440,6 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"></Button>
-
-
-
 
 
 

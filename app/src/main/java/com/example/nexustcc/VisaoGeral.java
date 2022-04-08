@@ -6,10 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 
@@ -25,6 +28,7 @@ public class VisaoGeral extends AppCompatActivity  implements NavigationView.OnN
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visao_geral);
 
+
         drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
 
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, null, R.string.abrir_drawer, R.string.fechar_drawer);
@@ -33,9 +37,22 @@ public class VisaoGeral extends AppCompatActivity  implements NavigationView.OnN
         toggle.syncState();
 
         navigationView = (NavigationView) findViewById(R.id.navView);
-        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setNavigationItemSelectedListener(this); }
 
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.item_menu_visao_geral) {
+            Toast.makeText(this, "CLICOU EM VISÃO GERAL!!", Toast.LENGTH_SHORT).show();
+        } else if (item.getItemId() == R.id.item_menu_integrantes) {
+            Toast.makeText(this, "CLICOU EM INTEGRANTES!!", Toast.LENGTH_SHORT).show();
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
+        return true;
     }
+
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
