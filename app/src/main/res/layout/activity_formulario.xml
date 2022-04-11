@@ -7,23 +7,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Formulario"
-    android:stretchColumns="4">
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <LinearLayout
-            android:layout_width="00dp"
-            android:layout_height="80dp"
-            tools:ignore="MissingConstraints">
-
                 <RelativeLayout
                     android:layout_width="414dp"
-                    android:layout_height="80dp"
+                    android:layout_height="match_parent"
                     android:background="@color/white">
 
                     <RelativeLayout
@@ -53,11 +46,16 @@
                 </RelativeLayout>
 
 
-            </LinearLayout>
 
 
 
-            //clareza
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp">
+
+
+        //clareza
 
             <TableRow
 
@@ -414,8 +412,6 @@
             <TableRow
                 android:padding="20dp">
 
-
-
                 <TextView
                     android:id="@+id/text_observacoes_"
                     android:text="Observações:"
@@ -437,7 +433,7 @@
                 android:text="ENVIAR"
                 app:backgroundTint="@color/blue_4"
                 android:background="@drawable/button"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"></Button>
 
@@ -445,6 +441,6 @@
 
         </TableLayout>
 
-    </LinearLayout>
+    </RelativeLayout>
 
 </ScrollView>

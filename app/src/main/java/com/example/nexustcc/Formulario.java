@@ -37,6 +37,7 @@ public class Formulario extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_formulario);
 
+
             //IDS CHECKBOX
 
             cb01 = (CheckBox) findViewById(R.id.cb_clareza_1);
@@ -363,6 +364,5 @@ public class Formulario extends AppCompatActivity {
 
 
         }
-
 
 }

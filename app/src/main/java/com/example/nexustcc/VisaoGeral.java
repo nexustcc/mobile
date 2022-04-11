@@ -41,55 +41,44 @@ public class VisaoGeral extends AppCompatActivity  implements NavigationView.OnN
 
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.item_menu_visao_geral) {
-            Toast.makeText(this, "CLICOU EM VISÃO GERAL!!", Toast.LENGTH_SHORT).show();
-        } else if (item.getItemId() == R.id.item_menu_integrantes) {
-            Toast.makeText(this, "CLICOU EM INTEGRANTES!!", Toast.LENGTH_SHORT).show();
-        } else {
-            return super.onOptionsItemSelected(item);
-        }
-        return true;
-    }
-
-
-
-    @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-            switch (item.getItemId()) {
 
-                case R.id.item_menu_visao_geral: {
-                    Log.d("TESTE-MENU", String.valueOf(item.getItemId()));
-                    startActivity(new Intent(this, VisaoGeral.class));
-                    break;
-                }
-                case R.id.item_menu_integrantes: {
-                    Log.d("TESTE-MENU", String.valueOf(item.getItemId()));
-                    startActivity(new Intent(this, Integrantes.class));
-                    break;
-                }
-                case R.id.item_menu_formulário: {
-                    Log.d("TESTE-MENU", String.valueOf(item.getItemId()));
-                    startActivity(new Intent(this, Formulario.class));
-                    break;
-                }
-                case R.id.menu_sair: {
-                    Log.d("TESTE-MENU", String.valueOf(item.getItemId()));
-                    startActivity(new Intent(this, Login.class));
-                    break;
-                }
-                default: {
-                    Log.d("TESTE-MENU", String.valueOf(item.getItemId()));
-                    Toast.makeText(this, "Menu Default", Toast.LENGTH_SHORT).show();
-                    break;
-                }
+        Log.d("TESTE-MENU", "TESTE");
+
+        switch (item.getItemId()) {
+
+            case R.id.item_menu_visao_geral: {
+                Log.d("TESTE-MENU", String.valueOf(item.getItemId()));
+                startActivity(new Intent(this, VisaoGeral.class));
+                break;
             }
-
-            drawerLayout.closeDrawer(GravityCompat.START);
-
-            return true;
+            case R.id.item_menu_integrantes: {
+                Log.d("TESTE-MENU", String.valueOf(item.getItemId()));
+                startActivity(new Intent(this, Integrantes.class));
+                break;
+            }
+            case R.id.item_menu_formulário: {
+                Log.d("TESTE-MENU", String.valueOf(item.getItemId()));
+                startActivity(new Intent(this, Formulario.class));
+                break;
+            }
+            case R.id.menu_sair: {
+                Log.d("TESTE-MENU", String.valueOf(item.getItemId()));
+                Toast.makeText(this, "Menu 4", Toast.LENGTH_SHORT).show();
+                break;
+            }
+            default: {
+                Log.d("TESTE-MENU", String.valueOf(item.getItemId()));
+                Toast.makeText(this, "Menu Default", Toast.LENGTH_SHORT).show();
+                break;
+            }
         }
+
+        drawerLayout.closeDrawer(GravityCompat.START);
+
+        return true;
+    }
 
     @Override
     public void onBackPressed() {
@@ -101,7 +90,7 @@ public class VisaoGeral extends AppCompatActivity  implements NavigationView.OnN
         }
 
     }
-    }
+}
 
 
 

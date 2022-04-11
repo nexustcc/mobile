@@ -10,7 +10,8 @@
     android:layout_height="match_parent"
     tools:context=".VisaoGeral"
     android:fitsSystemWindows="true"
-    tools:openDrawer="start">
+    tools:openDrawer="start"
+    tools:menu="@menu/menu">
 
     <RelativeLayout
         android:layout_width="wrap_content"
