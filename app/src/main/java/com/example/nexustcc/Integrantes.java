@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class Integrantes extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener{
+public class Integrantes extends AppCompatActivity  {
 
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
@@ -24,50 +24,6 @@ public class Integrantes extends AppCompatActivity  implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_integrantes);
 
-        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, null, R.string.abrir_drawer, R.string.fechar_drawer);
-        drawerLayout.addDrawerListener(toggle);
-       toggle.syncState();
-
-       navigationView = (NavigationView) findViewById(R.id.navView);
-       navigationView.setNavigationItemSelectedListener(this);
-
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()) {
-
-            case R.id.item_menu_visao_geral: {
-                Log.d("TESTE-MENU", String.valueOf(item.getItemId()));
-                startActivity(new Intent(this, VisaoGeral.class));
-                break;
-            }
-            case R.id.item_menu_integrantes: {
-                Log.d("TESTE-MENU", String.valueOf(item.getItemId()));
-                startActivity(new Intent(this, Integrantes.class));
-                break;
-            }
-            case R.id.item_menu_formulário: {
-                Log.d("TESTE-MENU", String.valueOf(item.getItemId()));
-                startActivity(new Intent(this, Formulario.class));
-                break;
-            }
-            case R.id.menu_sair: {
-                Log.d("TESTE-MENU", String.valueOf(item.getItemId()));
-                startActivity(new Intent(this, Login.class));
-                break;
-            }
-            default: {
-                Log.d("TESTE-MENU", String.valueOf(item.getItemId()));
-                Toast.makeText(this, "Menu Default", Toast.LENGTH_SHORT).show();
-                break;
-            }
-        }
-
-        drawerLayout.closeDrawer(GravityCompat.START);
-
-        return true;
     }
 }

@@ -9,30 +9,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NEXUSTCC">
-<!--        <activity-->
-<!--            android:name=".ListagemGrupo"-->
-<!--            android:exported="false" />-->
-<!--        <activity-->
-<!--            android:name=".ContainerGrupos"-->
-<!--            android:exported="false" />-->
-<!--        <activity-->
-<!--            android:name=".Formulario"-->
-<!--            android:exported="false" />-->
-<!--        <activity-->
-<!--            android:name=".VisaoGeral"-->
-<!--            android:exported="false" />-->
-<!--        <activity-->
-<!--            android:name=".Integrantes"-->
-<!--            android:exported="true" />-->
-<!--        <activity-->
-<!--            android:name=".ListagemGruposAntiga"-->
-<!--            android:exported="false" />-->
-<!--        <activity-->
-<!--            android:name=".SplashScreenActivity"-->
-<!--            android:exported="false" />-->
-<!--        <activity-->
-<!--            android:name=".MainActivity"-->
-<!--            android:exported="false" />-->
+        <!-- <activity -->
+        <!-- android:name=".ListagemGrupo" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".ContainerGrupos" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".Formulario" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".VisaoGeral" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".Integrantes" -->
+        <!-- android:exported="true" /> -->
+        <!-- <activity -->
+        <!-- android:name=".ListagemGruposAntiga" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".SplashScreenActivity" -->
+        <!-- android:exported="false" /> -->
+        <!-- <activity -->
+        <!-- android:name=".MainActivity" -->
+        <!-- android:exported="false" /> -->
         <activity
             android:name=".Formulario"
             android:exported="true">

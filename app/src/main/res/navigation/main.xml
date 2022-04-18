@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    app:startDestination="@id/visaoGeral2">
+    <activity
+        android:id="@+id/visaoGeral2"
+        android:name="com.example.nexustcc.VisaoGeral"
+        android:label="activity_visao_geral"
+        tools:layout="@layout/activity_visao_geral" />
+    <activity
+        android:id="@+id/integrantes2"
+        android:name="com.example.nexustcc.Integrantes"
+        android:label="activity_integrantes"
+        tools:layout="@layout/activity_integrantes" />
+    <activity
+        android:id="@+id/formulario2"
+        android:name="com.example.nexustcc.Formulario"
+        android:label="activity_formulario"
+        tools:layout="@layout/activity_formulario" />
+</navigation>

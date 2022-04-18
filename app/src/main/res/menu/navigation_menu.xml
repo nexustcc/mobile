@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/visaoGeral"
+        android:icon="@drawable/ic_visao_geral"
+        android:title="@string/visaoGeral" />
+
+    <item
+        android:id="@+id/integrantes"
+        android:icon="@drawable/ic_integrantes"
+        android:title="@string/integrantes" />
+
+    <item
+        android:id="@+id/formulario"
+        android:icon="@drawable/ic_formulario"
+        android:title="@string/formulario" />
+
+</menu>

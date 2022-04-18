@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="StyledTilEditTextTheme">
+    <style name="AppTheme" parent= "Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorControlNormal">#FF000000</item> // Cor padrão da linha
         <item name="colorControlActivated">#044177</item> // Cor linha e texto quando recebe foco
     </style>

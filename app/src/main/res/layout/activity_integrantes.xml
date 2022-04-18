@@ -35,27 +35,6 @@
 
     </RelativeLayout>
 
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/navView"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            app:headerLayout="@layout/menu_header"
-            app:menu="@menu/menu"
-            tools:ignore="MissingConstraints">
-
-            <ImageView
-                android:id="@+id/menu_sair"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="700dp"
-                android:background="@drawable/ic_logout">
-
-            </ImageView>
-
-        </com.google.android.material.navigation.NavigationView>
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -68,16 +47,20 @@
             android:text="Integrantes"
             android:textColor="@color/black"></TextView>
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:riv_oval= "true">
+        </ImageView>
 
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Orientadores"
-            android:textColor="@color/black"
             android:layout_marginStart="40dp"
             android:layout_marginTop="300dp"
-            ></TextView>
+            android:text="Orientadores"
+            android:textColor="@color/black"></TextView>
 
     </RelativeLayout>
 
