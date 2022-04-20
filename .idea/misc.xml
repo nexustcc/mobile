@@ -33,6 +33,7 @@
         <entry key="app/src/main/res/drawable/login.xml" value="0.491" />
         <entry key="app/src/main/res/drawable/menu_nav_header.xml" value="0.3375" />
         <entry key="app/src/main/res/drawable/nav_header_menu.xml" value="0.3375" />
+        <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.1615" />
         <entry key="app/src/main/res/drawable/sombra_card_view.xml" value="0.491" />
         <entry key="app/src/main/res/drawable/splashscreen.xml" value="0.491" />
         <entry key="app/src/main/res/drawable/teste.xml" value="0.4475" />
@@ -46,7 +47,7 @@
         <entry key="app/src/main/res/layout/activity_listagem_grupos.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_listagem_grupos_antiga.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.5042016806722689" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.11" />
         <entry key="app/src/main/res/layout/activity_menu.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/activity_menu2.xml" value="0.40208333333333335" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.5911458333333334" />
@@ -58,10 +59,13 @@
         <entry key="app/src/main/res/layout/fragment_visao_geral.xml" value="0.375" />
         <entry key="app/src/main/res/layout/layout_navigation_header.xml" value="0.40260416666666665" />
         <entry key="app/src/main/res/layout/menu_header.xml" value="0.4161458333333333" />
+        <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.20925925925925926" />
         <entry key="app/src/main/res/layout/nav_header_menu.xml" value="0.4161458333333333" />
         <entry key="app/src/main/res/layout/toolbar.xml" value="0.4666666666666667" />
         <entry key="app/src/main/res/menu/menu.xml" value="0.625" />
         <entry key="app/src/main/res/menu/navigation_menu.xml" value="0.40260416666666665" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1615" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1615" />
       </map>
     </option>
   </component>
