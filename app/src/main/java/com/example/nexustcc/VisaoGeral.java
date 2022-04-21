@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class VisaoGeral extends AppCompatActivity   {
+public class VisaoGeral extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

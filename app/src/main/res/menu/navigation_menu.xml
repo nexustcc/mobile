@@ -6,19 +6,16 @@
         <item
             android:id="@+id/visaoGeral"
             android:icon="@drawable/ic_visao_geral"
-            android:title="VISÃO GERAL">
-        </item>
+            android:title="VISÃO GERAL"></item>
 
         <item
             android:id="@+id/integrantes"
             android:icon="@drawable/ic_integrantes"
-            android:title="INTEGRANTES">
-        </item>
+            android:title="INTEGRANTES"></item>
 
         <item
             android:id="@+id/formulario"
             android:icon="@drawable/ic_formulario"
-            android:title="FORMULARIO">
-        </item>
+            android:title="FORMULARIO"></item>
     </group>
 </menu>

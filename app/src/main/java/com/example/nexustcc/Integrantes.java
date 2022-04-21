@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class Integrantes extends AppCompatActivity  {
+public class Integrantes extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;

@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        nav=(NavigationView)findViewById(R.id.navigationView);
-        drawerLayout=(DrawerLayout)findViewById(R.id.drawerLayout);
+        nav = (NavigationView) findViewById(R.id.navigationView);
+        drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
 
         findViewById(R.id.imagemMenu).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,16 +40,14 @@ public class MainActivity extends AppCompatActivity {
 
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
-            {
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 int id = menuItem.getItemId();
                 menuItem.setChecked(true);
 
-                switch (id)
-                {
+                switch (id) {
                     case R.id.visaoGeral:
                         replaceFragment(new VisaoGeralFragment());
-                        Toast.makeText(getApplicationContext(),"VISAO GERAL CLICADO",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "VISAO GERAL CLICADO", Toast.LENGTH_LONG).show();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
                 }
@@ -59,10 +57,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void replaceFragment(Fragment fragment){
+    private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout,fragment);
+        fragmentTransaction.replace(R.id.frameLayout, fragment);
         fragmentTransaction.commit();
     }
 
