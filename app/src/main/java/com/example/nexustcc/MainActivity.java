@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 
 import android.os.Bundle;
@@ -36,20 +38,17 @@ public class MainActivity extends AppCompatActivity {
 
         nav.setItemIconTintList(null);
 
-//        int id = item.getItemId();
-//
-//        switch (id) {
-//            case R.id.visaoGeral:
-//                Toast.makeText(this, "Visão Geral Clicada", Toast.LENGTH_SHORT).show();break;
-//        }
-
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
             {
-                switch (menuItem.getItemId())
+                int id = menuItem.getItemId();
+                menuItem.setChecked(true);
+
+                switch (id)
                 {
                     case R.id.visaoGeral:
+                        replaceFragment(new VisaoGeralFragment());
                         Toast.makeText(getApplicationContext(),"VISAO GERAL CLICADO",Toast.LENGTH_LONG).show();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
@@ -58,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+    }
+
+    private void replaceFragment(Fragment fragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayout,fragment);
+        fragmentTransaction.commit();
     }
 
 }
