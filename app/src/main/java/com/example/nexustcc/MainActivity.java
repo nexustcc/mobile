@@ -50,6 +50,16 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "VISAO GERAL CLICADO", Toast.LENGTH_LONG).show();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
+                    case R.id.integrantes:
+                        replaceFragment(new IntegrantesFragment());
+                        Toast.makeText(getApplicationContext(), "INTEGRANTES CLICADO", Toast.LENGTH_LONG).show();
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+                    case R.id.formulario:
+                        replaceFragment(new FormularioFragment());
+                        Toast.makeText(getApplicationContext(), "FORMULÁRIO CLICADO", Toast.LENGTH_LONG).show();
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
                 }
 
                 return true;

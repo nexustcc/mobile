@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".FormularioFragment"
+    tools:openDrawer="start">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="414dp"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true">
+
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="NEXUS TCC"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp">
+
+
+            //clareza
+
+            <TableRow
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:background="@drawable/itens_formularios"
+                android:gravity="center"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:layout_margin="2dip"
+                    android:padding="3dip"
+                    android:text="CRITÉRIOS"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:gravity="right"
+                    android:padding="3dip"
+                    android:text="RUIM"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_column="1"
+                    android:layout_gravity="center"
+                    android:gravity="right"
+                    android:padding="3dip"
+                    android:text="REGULAR"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:gravity="right"
+                    android:padding="3dip"
+                    android:text="ÓTIMO"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            //clareza
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/text_clareza"
+                    android:gravity="center"
+                    android:padding="3dip"
+                    android:text="Clareza"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/cb_clareza_1"
+                    android:button="@drawable/customizacao_checkbox"
+
+                    ></CheckBox>
+
+                <CheckBox
+                    android:id="@+id/cb_clareza_2"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+                <CheckBox
+                    android:id="@+id/cb_clareza_3"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+            </TableRow>
+
+            //objetividade
+
+            <TableRow
+                android:gravity="center"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/text_objetividade"
+                    android:layout_width="168dp"
+                    android:gravity="center"
+                    android:padding="3dip"
+                    android:text="Objetividade"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/cb_objetividade_1"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+                <CheckBox
+                    android:id="@+id/cb_objetividade_2"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+                <CheckBox
+                    android:id="@+id/cb_objetividade_3"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+            </TableRow>
+
+            //fluência na Exposição de Ideias
+
+            <TableRow
+                android:gravity="center"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/text_exposicao_ideias"
+                    android:layout_width="114dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="3dip"
+                    android:text="Fluência na Exposição\n de Ideias"
+
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/cb_exposicao_ideias_1"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+                <CheckBox
+                    android:id="@+id/cb_exposicao_ideias_2"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+                <CheckBox
+                    android:id="@+id/cb_exposicao_ideias_3"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+            </TableRow>
+
+            //domínio de conteúdo
+
+            //capacidade de comunicação
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/text_dominio_conteudo"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:padding="3dip"
+                    android:text="Domínio de Conteúdo"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/cb_dominio_conteudo_1"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+                <CheckBox
+                    android:id="@+id/cb_dominio_conteudo_2"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+                <CheckBox
+                    android:id="@+id/cb_dominio_conteudo_3"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+            </TableRow>
+
+            <TableRow
+                android:gravity="center"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/text_capacidade_comunicacao"
+                    android:gravity="center"
+                    android:padding="3dip"
+                    android:text="Capacidade de\nComunicação"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/cb_capacidade_comunicacao_1"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+                <CheckBox
+                    android:id="@+id/cb_capacidade_comunicacao_2"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+                <CheckBox
+                    android:id="@+id/cb_capacidade_comunicacao_3"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+            </TableRow>
+
+            //argumentação
+
+            <TableRow
+                android:gravity="center"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/text_argumemtacao"
+                    android:gravity="center"
+                    android:padding="3dip"
+                    android:text="Argumentação"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/cb_argumemtacao_1"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+                <CheckBox
+                    android:id="@+id/cb_argumemtacao_2"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+                <CheckBox
+                    android:id="@+id/cb_argumemtacao_3"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+            </TableRow>
+
+            //organização da apresentação
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/text_organizacao_apresentacao"
+                    android:gravity="center"
+                    android:padding="3dip"
+                    android:text="Organização da\nApresentação"
+                    android:textStyle="bold" />
+
+                <CheckBox
+
+                    android:id="@+id/cb_organizacao_apresentacao_1"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+                <CheckBox
+                    android:id="@+id/cb_organizacao_apresentacao_2"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+                <CheckBox
+                    android:id="@+id/cb_organizacao_apresentacao_3"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+            </TableRow>
+
+            //utilização dos recursos
+
+            <TableRow
+                android:gravity="center"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/text_utilizacao_recursos"
+                    android:gravity="center"
+                    android:padding="3dip"
+
+                    android:text="Utilização dos\nRecursos"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/cb_utilizacao_recursos_1"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+                <CheckBox
+                    android:id="@+id/cb_utilizacao_recursos_2"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+                <CheckBox
+                    android:id="@+id/cb_utilizacao_recursos_3"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+            </TableRow>
+
+            //postura dos integrantes
+
+            <TableRow
+                android:gravity="center"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/text_postura_integrantes"
+                    android:gravity="center"
+                    android:padding="3dip"
+                    android:text="Postura dos\nIntegrantes"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/cb_postura_integrantes_1"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+                <CheckBox
+                    android:id="@+id/cb_postura_integrantes_2"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+                <CheckBox
+                    android:id="@+id/cb_postura_integrantes_3"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+            </TableRow>
+
+            //uso do tempo
+
+            <TableRow
+                android:gravity="center"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/text_uso_do_tempo"
+                    android:gravity="center"
+                    android:padding="3dip"
+                    android:text="Uso do Tempo"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/cb_uso_do_tempo_1"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+                <CheckBox
+                    android:id="@+id/cb_uso_do_tempo_2"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+                <CheckBox
+                    android:id="@+id/cb_uso_do_tempo_3"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
+
+            </TableRow>
+
+            //observações
+
+            <TableRow android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/text_observacoes_"
+                    android:layout_marginStart="40dp"
+                    android:gravity="center"
+                    android:text="Observações:"
+                    android:textStyle="bold"></TextView>
+
+                <EditText
+                    android:id="@+id/edit_text_observacoes"
+                    android:layout_width="45dp" />
+
+            </TableRow>
+
+            <Button
+                android:layout_width="354dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/button"
+                android:text="ENVIAR"
+                app:backgroundTint="@color/blue_4"></Button>
+
+
+        </TableLayout>
+
+    </RelativeLayout>
+
+</ScrollView>
