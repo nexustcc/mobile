@@ -5,7 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="8dp"
     app:cardCornerRadius="8dp"
-    app:cardElevation="4dp">
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/blue_4">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,14 +21,20 @@
         android:layout_height="wrap_content"
         android:textSize="10sp"
         android:textStyle="bold"
-        android:textAlignment="center">
+        android:textAlignment="center"
+        android:textColor="@color/grey_3">
     </TextView>
 
     <TextView
         android:id="@+id/txtTemaDoProjeto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp">
+        android:textSize="16sp"
+        android:textColor="@color/white">
     </TextView>
+
+
+
+
 
 </androidx.cardview.widget.CardView>

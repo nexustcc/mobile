@@ -6,28 +6,31 @@ import com.google.gson.GsonBuilder;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class RetrofitClient {
+public class Retrofit {
 
-
-    private static Retrofit retrofit = null;
-
-    /** MÉTODO DE ACESSO **/
+    /** MÉTODO DE ACESSO AO CLIENT **/
     public static Retrofit getClient(String url){
 
+        private static Retrofit retrofit = null;
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
 
-        if(retrofit == null){
-
+        if (retrofit == null){
             retrofit = new Retrofit.Builder()
                     .baseUrl(url)
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();
-
         }
 
         return retrofit;
-
     }
+
+}
+
+
+
+
+
+
 }

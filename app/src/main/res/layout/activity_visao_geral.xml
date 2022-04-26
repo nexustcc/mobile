@@ -38,28 +38,6 @@
     </RelativeLayout>
 
 
-    /**MENU**
-
-    <!--    <com.google.android.material.navigation.NavigationView-->
-    <!--        android:id="@+id/navView"-->
-    <!--        android:layout_width="wrap_content"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        android:layout_gravity="start"-->
-    <!--        app:headerLayout="@layout/menu_header"-->
-    <!--        app:menu="@menu/menu">-->
-
-    <!--        <ImageView-->
-    <!--            android:id="@+id/menu_sair"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_marginStart="10dp"-->
-    <!--            android:layout_marginTop="700dp"-->
-    <!--            android:background="@drawable/ic_logout">-->
-
-    <!--        </ImageView>-->
-
-    <!--    </com.google.android.material.navigation.NavigationView>-->
-
 
     <RelativeLayout
         android:layout_width="match_parent"
