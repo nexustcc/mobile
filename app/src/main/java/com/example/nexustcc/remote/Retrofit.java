@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Retrofit {
 
-    /** MÉTODO DE ACESSO AO CLIENT **/
+    /** MÉTODO DE ACESSO **/
     public static Retrofit getClient(String url){
 
         private static Retrofit retrofit = null;
@@ -24,12 +24,8 @@ public class Retrofit {
         }
 
         return retrofit;
-    }
 
 }
-
-
-
 
 
 

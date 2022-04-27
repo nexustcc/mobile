@@ -6,10 +6,10 @@ public class APIUtil {
     //IP e não o localhost
     private static final String API_URL = "http://10.107.144.4:3000";
 
-    public  static ApiInterface getUsuarioInterface(){
+    public  static RouterInterface getGruposInterface(){
 
         return Retrofit.getClient(API_URL)
-                .create(ApiInterface.class);
+                .create(RouterInterface.class);
 
     }
 }

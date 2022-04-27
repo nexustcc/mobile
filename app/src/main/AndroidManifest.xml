@@ -2,9 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.nexustcc">
 
-
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -14,9 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NEXUSTCC">
         <activity
-            android:name=".ItemContainerGruposActivity"
+            android:name=".ListagemItens"
             android:exported="false" />
-        <!-- <activity -->
+        <activity
+            android:name=".ItemContainerGruposActivity"
+            android:exported="false" /> <!-- <activity -->
         <!-- android:name=".ListagemGrupo" -->
         <!-- android:exported="false" /> -->
         <!-- <activity -->

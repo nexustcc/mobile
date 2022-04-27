@@ -13,7 +13,6 @@ public class Grupos {
 
     @SerializedName("idGrupo")
     //mapeando dentro do gson o "idGrupo"
-
     @Expose
     //ficar visivel para a biblioteca
     private int idGrupo;
@@ -25,7 +24,6 @@ public class Grupos {
     @SerializedName("temaProjeto")
     @Expose
     private String temaProjeto;
-
 
     @SerializedName("numeracao")
     @Expose

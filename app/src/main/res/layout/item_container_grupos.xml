@@ -6,35 +6,56 @@
     android:layout_margin="8dp"
     app:cardCornerRadius="8dp"
     app:cardElevation="4dp"
-    app:cardBackgroundColor="@color/blue_4">
+    app:cardBackgroundColor="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:padding="10dp">
+
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="15dp"
+            android:background="@drawable/ic_icone_grupos" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/txtNomeDoProjeto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:textColor="@color/blue_4"
+                android:textSize="10sp"
+                android:textStyle="bold"></TextView>
+
+            <TextView
+            android:id="@+id/txtTemaDoProjeto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey_1"
+            android:layout_marginTop="5dp"
+            android:textSize="16sp">
+
+        </TextView>
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_seta" />
+
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/txtNomeDoProjeto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="10sp"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:textColor="@color/grey_3">
-    </TextView>
-
-    <TextView
-        android:id="@+id/txtTemaDoProjeto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:textColor="@color/white">
-    </TextView>
-
-
-
 
 
 </androidx.cardview.widget.CardView>
