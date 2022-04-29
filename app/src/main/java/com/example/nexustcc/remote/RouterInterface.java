@@ -7,15 +7,11 @@ import java.util.List;
 
 public interface RouterInterface {
 
-        /** ROTA DE LISTAGEM DO GRUPOS **/
-        @POST("/listarGrupo/:idGrupo")
-        Call<Grupos>(@Body Grupos grupo);
+        /** ROTA DE LISTAGEM DOS GRUPOS **/
 
-         //requisição de leitura
-        @GET("/listarGrupo/:idGrupo")
+        //requisição de leitura
+        @GET("/listarGrupo/{idGrupo}")
         Call<List<Grupos>>getGrupos();
 
 
-
-
-    }
+}

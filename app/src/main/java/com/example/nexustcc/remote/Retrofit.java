@@ -6,6 +6,7 @@ import com.google.gson.GsonBuilder;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+
 public class Retrofit {
 
     /** MÉTODO DE ACESSO **/
@@ -25,8 +26,10 @@ public class Retrofit {
 
         return retrofit;
 
-}
+    }
 
 
 
 }
+© 2022 GitHub, Inc.
+        Terms

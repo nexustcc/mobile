@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import com.example.nexustcc.model.Grupos;
 import com.example.nexustcc.model.Item;
-import com.example.nexustcc.remote.APIUtil;
 import com.example.nexustcc.remote.RouterInterface;
 
 import java.util.ArrayList;
@@ -118,7 +117,7 @@ public class ListagemGrupo extends AppCompatActivity {
 
         class GrupoViewHolder extends RecyclerView.ViewHolder {
 
-            /*ATRIBUTOS DA CLASS LIVROVIEWHOLDER*/
+            /*ATRIBUTOS DA CLASS GRUPOVIEWHOLDER*/
 
             private TextView txtNomeDoProjeto, txtTemaDoProjeto;
             private int idGrupo;
