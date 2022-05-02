@@ -13,7 +13,7 @@ public class ContainerGrupos extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_container_grupos);
+        setContentView(R.layout.item_container_grupos);
 
 //        RecyclerView recyclerView = findViewById(R.id.recyclerview);
 //        List<Item> item = SQLhelper.getInstance(this).listBook();

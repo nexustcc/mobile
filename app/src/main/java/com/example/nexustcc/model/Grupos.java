@@ -125,11 +125,6 @@ public class Grupos {
         this.dataApresentacao = dataApresentacao;
         this.horaApresentacao = horaApresentacao;
 
-
-
     }
-
-
-
 
 }

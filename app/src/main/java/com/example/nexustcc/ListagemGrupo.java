@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.telecom.Call;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,10 +12,15 @@ import android.widget.TextView;
 
 import com.example.nexustcc.model.Grupos;
 import com.example.nexustcc.model.Item;
+import com.example.nexustcc.remote.APIUtil;
 import com.example.nexustcc.remote.RouterInterface;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class ListagemGrupo extends AppCompatActivity {
@@ -38,10 +42,11 @@ public class ListagemGrupo extends AppCompatActivity {
 
         Call<List<Grupos>> call = routerInterface.getGrupos();
 
-        //ESSA PARTE VAI PEGAR OS DADOS
+
+        //PEGAR OS DADOS
         call.enqueue(new Callback<List<Grupos>>() {
             @Override
-            //RECEBENDO OS DADOS
+            //RECEBER OS DADOS
             public void onResponse(Call<List<Grupos>> call, Response<List<Grupos>> response) {
 
                 if (response.isSuccessful()){
@@ -140,6 +145,6 @@ public class ListagemGrupo extends AppCompatActivity {
 
 
             }
-        });
+        };
     }
 }
