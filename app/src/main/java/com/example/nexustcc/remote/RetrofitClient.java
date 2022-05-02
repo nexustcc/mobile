@@ -4,17 +4,17 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 
-import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class RetrofitGrupos {
+public class RetrofitClient {
 
-    private static RetrofitGrupos retrofit = null;
+    private static Retrofit retrofit = null;
 
     /** MÉTODO DE ACESSO  **/
     //aonde a API roda
-    public static RetrofitGrupos getGrupos(String url){
+    public static Retrofit getClient(String url){
 
         Gson gson = new GsonBuilder()
                 .setLenient()
@@ -22,7 +22,7 @@ public class RetrofitGrupos {
 
         if(retrofit == null){
 
-            retrofit = new RetrofitGrupos.Builder()
+            retrofit = new Retrofit.Builder()
                     .baseUrl(url)
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .build();

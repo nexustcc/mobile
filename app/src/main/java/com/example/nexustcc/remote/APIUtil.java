@@ -8,7 +8,7 @@ public class APIUtil {
 
     public  static RouterInterface getGruposInterface(){
 
-        return RetrofitGrupos.getGrupos(API_URL).create(RouterInterface.class);
+        return RetrofitClient.getClient(API_URL).create(RouterInterface.class);
 
     }
 }
