@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,7 +41,7 @@ public class ListagemGrupo extends AppCompatActivity {
 
 //**  EXECUTA A CHAMADA PARA A ROTA DE LISTAGEM DE GRUPOS**//
 
-        Call<List<Grupos>> call = routerInterface.getGrupos();
+        Call<List<Grupos>> call = routerInterface.getGrupos(1);
 
 
         //PEGAR OS DADOS
@@ -49,7 +50,12 @@ public class ListagemGrupo extends AppCompatActivity {
             //RECEBER OS DADOS
             public void onResponse(Call<List<Grupos>> call, Response<List<Grupos>> response) {
 
+                Log.d("TESTE1", "ONRESPONSE");
+                Log.d("TESTE1", String.valueOf(response.isSuccessful()));
+
                 if (response.isSuccessful()){
+
+                    Log.d("TESTE1", "ISSUCCESSFUL");
 
                     List<Item> itens = new ArrayList<>();
 
@@ -57,6 +63,8 @@ public class ListagemGrupo extends AppCompatActivity {
 
                     List<Grupos> list = new ArrayList<Grupos>();
                     list = response.body();
+
+                    Log.d("TESTE1", String.valueOf(list.size()));
 
                     for (int i = 0; i < list.size(); i++){
                         itens.add(new Item(0, list.get(i)));
@@ -69,6 +77,9 @@ public class ListagemGrupo extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<Grupos>> call, Throwable t) {
+
+                Log.d("TESTE1", "FAILURE");
+                Log.d("TESTE1", t.getMessage());
 
             }
         });
@@ -145,6 +156,6 @@ public class ListagemGrupo extends AppCompatActivity {
 
 
             }
-        };
+        }
     }
 }
