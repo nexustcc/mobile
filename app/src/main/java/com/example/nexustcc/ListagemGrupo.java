@@ -57,21 +57,25 @@ public class ListagemGrupo extends AppCompatActivity {
 
                     Log.d("TESTE1", "ISSUCCESSFUL");
 
-                    List<Item> itens = new ArrayList<>();
+                    //List<Item> itens = new ArrayList<>();
 
                     //RECEBE OS DADOS DA API
 
-                    List<Grupos> list = new ArrayList<Grupos>();
-                    list = response.body();
+                    List<Grupos> grupos = new ArrayList<Grupos>();
+                    grupos = response.body();
 
-                    Log.d("TESTE1", String.valueOf(list.size()));
+                    //Log.d("TESTE-", String.valueOf(grupos.get(1).getNomeProjeto()));
+                    //Log.d("TESTE1", String.valueOf(grupos.size()));
 
-                    for (int i = 0; i < list.size(); i++){
-                        itens.add(new Item(0, list.get(i)));
+//                    for (int i = 0; i < list.size(); i++){
+//                        itens.add(new Item(0, list.get(i)));
+//
+//                        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+//                        recyclerView.setAdapter(new GrupoAdapter(list));
+//                    }
 
-                        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-                        recyclerView.setAdapter(new GrupoAdapter(itens));
-                    }
+                    RecyclerView recyclerView = findViewById(R.id.recyclerView);
+                   recyclerView.setAdapter(new GrupoAdapter(grupos));
                 }
             }
 
@@ -89,10 +93,10 @@ public class ListagemGrupo extends AppCompatActivity {
 
     private class GrupoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
-        List<Item> itens;
+        List<Grupos> grupos;
 
-        public GrupoAdapter(List<Item> itens){
-            this.itens = itens;
+        public GrupoAdapter(List<Grupos> grupos){
+            this.grupos = grupos;
         }
 
         @NonNull
@@ -111,23 +115,25 @@ public class ListagemGrupo extends AppCompatActivity {
         public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
             //DADOS DOS GRUPOS
-            if (getItemViewType(position)== 0){
+           // if (getItemViewType(position)== 0){
 
-                Grupos grupo = (Grupos) itens.get(position).getObject();
+                Grupos grupo = grupos.get(position);
+
+                Log.d("TESTE-", String.valueOf(grupo.getNomeProjeto()));
                 ((GrupoAdapter.GrupoViewHolder) holder).setGrupoData(grupo);
-            }
+            //}
 
         }
 
         //retornando a quantidade de itens
         @Override
         public int getItemCount() {
-            return itens.size();
+            return grupos.size();
         }
 
-        public int getItemViewType(int position){
-            return itens.get(position).getType();
-        }
+//        public int getItemViewType(int position){
+//            return grupos.get(position);
+//        }
 
         /*CLASSE DE VIEWHOLDER DA RECYCLERVIEW*/
 
@@ -150,8 +156,8 @@ public class ListagemGrupo extends AppCompatActivity {
                 -txtTemaDoProjeto */
 
             public void setGrupoData(Grupos grupo){
-                txtNomeDoProjeto.setText(grupo.getNomeProjeto());
-                txtTemaDoProjeto.setText(grupo.getTemaProjeto());
+                txtNomeDoProjeto.setText(grupo.getNomeProjeto().toString());
+                txtTemaDoProjeto.setText(grupo.getTemaProjeto().toString());
                 idGrupo = grupo.getIdGrupo();
 
 

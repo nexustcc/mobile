@@ -5,8 +5,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="8dp"
     app:cardCornerRadius="8dp"
-    app:cardElevation="4dp"
-    app:cardBackgroundColor="@color/white">
+    app:cardElevation="4dp">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/blue_4">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,11 +19,6 @@
 
         android:padding="10dp">
 
-        <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="15dp"
-            android:background="@drawable/ic_icone_grupos" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,16 +26,17 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/txtNomeDoProjeto"
+                android:id="@+id/txtTemaDoProjeto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="Tema do Projeto"
                 android:layout_marginStart="15dp"
-                android:textColor="@color/blue_4"
-                android:textSize="18sp"
+                android:textColor="@color/grey_3"
+                android:textSize="16sp"
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/txtTemaDoProjeto"
+                android:id="@+id/txtDescricaoDoProjeto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -46,5 +47,10 @@
 
     </LinearLayout>
 
+    </androidx.cardview.widget.CardView>
+
 
 </androidx.cardview.widget.CardView>
+
+
+
