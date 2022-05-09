@@ -2,14 +2,19 @@ package com.example.nexustcc;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.nexustcc.model.Grupos;
 import com.example.nexustcc.model.Item;
@@ -160,8 +165,35 @@ public class ListagemGrupo extends AppCompatActivity {
                 txtTemaDoProjeto.setText(grupo.getTemaProjeto().toString());
                 idGrupo = grupo.getIdGrupo();
 
+                //* AÇÀO DE CLICK PARA EXIBIR INFORMAÇÕES DO GRUPO*//
+
+                itemView.setOnClickListener(view -> {
+
+                    //o parâmetro é aonde o alertDialog será executado
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(ListagemGrupo.this)
+                            .setMessage("ESCOLHA A AÇÃO QUE DESEJA EXECUTAR:")
+                            .setPositiveButton("VISUALIZAR INFORMAÇÕES", (dialog1, witch)->{
+                                //redireciona para tela de edição e leva os dados
+                                Intent intent = new Intent(ListagemGrupo.this, VisaoGeralFragment.class);
+                                intent.putExtra("idGrupo", idGrupo);
+                                Toast.makeText(ListagemGrupo.this, "ID clicado: " + grupo.getIdGrupo(), Toast.LENGTH_SHORT).show();
+                                startActivity(intent);
+                            })
+                            .setNegativeButton("CANCELAR", (dialog1, witch)->{});
+
+                    alertDialog.show();
+                });
 
             }
+
+
+
+
+
+
+
+
+
         }
     }
 }
