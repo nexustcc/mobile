@@ -1,7 +1,5 @@
 package com.example.nexustcc;
 
-import android.app.AlertDialog;
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.nexustcc.model.Grupos;
 import com.example.nexustcc.remote.APIUtil;
@@ -32,14 +29,32 @@ public class VisaoGeralFragment extends Fragment {
 
     RouterInterface routerInterface;
 
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    // TODO: Rename and change types of parameters
+    private String mParam1;
+    private String mParam2;
+
     public VisaoGeralFragment() {
         // Required empty public constructor
 
     }
 
-    public static VisaoGeralFragment newInstance() {
+    /**
+     * Use this factory method to create a new instance of
+     * this fragment using the provided parameters.
+     *
+     * @param param1 Parameter 1.
+     * @param param2 Parameter 2.
+     * @return A new instance of fragment VisaoGeralFragment.
+     */
+    // TODO: Rename and change types and number of parameters
+    public static VisaoGeralFragment newInstance(String param1, String param2) {
         VisaoGeralFragment fragment = new VisaoGeralFragment();
         Bundle args = new Bundle();
+        args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
     }
@@ -47,157 +62,12 @@ public class VisaoGeralFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-        //**  CONECTA O APLICATIVO COM A API**//
-        routerInterface = APIUtil.getGruposInterface();
-
-//**  EXECUTA A CHAMADA PARA A ROTA DE LISTAGEM DE GRUPOS**//
-
-        Call<List<Grupos>> call = routerInterface.getGrupos(1);
-
-
-        //PEGAR OS DADOS
-        call.enqueue(new Callback<List<Grupos>>() {
-            @Override
-            //RECEBER OS DADOS
-            public void onResponse(Call<List<Grupos>> call, Response<List<Grupos>> response) {
-
-                Log.d("TESTE1", "ONRESPONSE");
-                Log.d("TESTE1", String.valueOf(response.isSuccessful()));
-
-                if (response.isSuccessful()){
-
-                    Log.d("TESTE1", "ISSUCCESSFUL");
-
-                    //List<Item> itens = new ArrayList<>();
-
-                    //RECEBE OS DADOS DA API
-
-                    List<Grupos> grupos = new ArrayList<Grupos>();
-                    grupos = response.body();
-
-                    //Log.d("TESTE-", String.valueOf(grupos.get(1).getNomeProjeto()));
-                    //Log.d("TESTE1", String.valueOf(grupos.size()));
-
-//                    for (int i = 0; i < list.size(); i++){
-//                        itens.add(new Item(0, list.get(i)));
-//
-//                        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-//                        recyclerView.setAdapter(new GrupoAdapter(list));
-//                    }
-
-                    RecyclerView recyclerView = findViewById(R.id.recyclerView);
-                    recyclerView.setAdapter(new ListagemGrupo.GrupoAdapter(grupos));
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Grupos>> call, Throwable t) {
-
-                Log.d("TESTE1", "FAILURE");
-                Log.d("TESTE1", t.getMessage());
-
-            }
-        });
-    } //FIM DO MÉTODO ONCREATE
-
-    /*CLASSE DE ADAPTER DA RECYCLERVIEW*/
-
-    private class GrupoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
-
-        List<Grupos> grupos;
-
-        public GrupoAdapter(List<Grupos> grupos){
-            this.grupos = grupos;
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
-        @NonNull
-        @Override
-        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new ListagemGrupo.GrupoAdapter.GrupoViewHolder(
-                    LayoutInflater.from(
-                            parent.getContext()).inflate(
-                            R.layout.item_container_grupos,
-                            parent,
-                            false
-                    ));
-        }
-
-        @Override
-        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
-            //DADOS DOS GRUPOS
-            // if (getItemViewType(position)== 0){
-
-            Grupos grupo = grupos.get(position);
-
-            Log.d("TESTE-", String.valueOf(grupo.getNomeProjeto()));
-            ((ListagemGrupo.GrupoAdapter.GrupoViewHolder) holder).setGrupoData(grupo);
-            //}
-
-        }
-
-        //retornando a quantidade de itens
-        @Override
-        public int getItemCount() {
-            return grupos.size();
-        }
-
-//        public int getItemViewType(int position){
-//            return grupos.get(position);
-//        }
-
-        /*CLASSE DE VIEWHOLDER DA RECYCLERVIEW*/
-
-        class GrupoViewHolder extends RecyclerView.ViewHolder {
-
-            /*ATRIBUTOS DA CLASS GRUPOVIEWHOLDER*/
-
-            private TextView txtNomeDoProjeto, txtTemaDoProjeto;
-            private int idGrupo;
-
-            public GrupoViewHolder(@NonNull View itemView) {
-                super(itemView);
-
-                txtNomeDoProjeto = itemView.findViewById(R.id.txtNomeDoProjeto);
-                txtTemaDoProjeto = itemView.findViewById(R.id.txtTemaDoProjeto);
-            }
-
-              /*MÉTODO QUE CARREGA OS VALORES NOS ELEMENTOS DE TEXTVIEW
-                -txtNomeDoProjeto
-                -txtTemaDoProjeto */
-
-            public void setGrupoData(Grupos grupo) {
-                txtNomeDoProjeto.setText(grupo.getTemaProjeto().toString());
-                txtTemaDoProjeto.setText(grupo.getDescricao().toString());
-                idGrupo = grupo.getIdGrupo();
-
-                //* AÇÀO DE CLICK PARA EXIBIR INFORMAÇÕES DO GRUPO*//
-
-                itemView.setOnClickListener(view -> {
-
-                    //o parâmetro é aonde o alertDialog será executado
-                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(ListagemGrupo.this)
-                            .setMessage("ESCOLHA A AÇÃO QUE DESEJA EXECUTAR:")
-                            .setPositiveButton("VISUALIZAR INFORMAÇÕES", (dialog1, witch) -> {
-                                //redireciona para tela de edição e leva os dados
-                                Intent intent = new Intent(ListagemGrupo.this, VisaoGeralFragment.class);
-                                intent.putExtra("idGrupo", idGrupo);
-                                Toast.makeText(ListagemGrupo.this, "ID clicado: " + grupo.getIdGrupo(), Toast.LENGTH_SHORT).show();
-                                startActivity(intent);
-                            })
-                            .setNegativeButton("CANCELAR", (dialog1, witch) -> {
-                            });
-
-                    alertDialog.show();
-                });
-
-            }
-        }
-
-
-        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -206,3 +76,7 @@ public class VisaoGeralFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_visao_geral, container, false);
     }
 }
+
+
+
+
