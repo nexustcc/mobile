@@ -12,12 +12,12 @@ public interface RouterInterface {
 
         /** ROTA DE LISTAGEM DOS GRUPOS **/
         //requisição de leitura
-        @GET("/avaliador/listarGruposAvaliador/{idAvaliador}")
+        @GET("mobile/avaliador/listarGruposAvaliador/{idAvaliador}")
         Call<List<Grupos>>getGrupos(@Path("idAvaliador") int idAvaliador);
 
 //        /** ROTA DE LISTAGEM DAS INFORMAÇÕES DOS GRUPOS **/
 //        //requisição de leitura
-//        @GET("/avaliador/listarGrupo/{idGrupo}")
+//        @GET("mobile/avaliador/listarGrupo/{idGrupo}")
 //        Call<List<Grupos>>getGrupos(@Path("idGrupo") int idGrupo);
 
 

@@ -105,7 +105,7 @@
         <entry key="app/src/main/res/layout/fragment_visao_geral.xml" value="0.375" />
         <entry key="app/src/main/res/layout/item_container.xml" value="0.5177083333333333" />
         <entry key="app/src/main/res/layout/item_container_grupos.xml" value="0.5" />
-        <entry key="app/src/main/res/layout/item_container_visao_geral.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/item_container_visao_geral.xml" value="0.25" />
         <entry key="app/src/main/res/layout/layout_navigation_header.xml" value="0.40260416666666665" />
         <entry key="app/src/main/res/layout/menu_header.xml" value="0.4161458333333333" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.20925925925925926" />
