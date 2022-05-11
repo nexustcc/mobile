@@ -36,6 +36,7 @@ public class ListagemGrupo extends AppCompatActivity {
 
     RouterInterface routerInterface;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -165,7 +166,7 @@ public class ListagemGrupo extends AppCompatActivity {
                 txtTemaDoProjeto.setText(grupo.getTemaProjeto().toString());
                 idGrupo = grupo.getIdGrupo();
 
-                //* AÇÀO DE CLICK PARA EXIBIR INFORMAÇÕES DO GRUPO*//
+                //* AÇÃO DE CLICK PARA EXIBIR INFORMAÇÕES DO GRUPO*//
 
                 itemView.setOnClickListener(view -> {
 
@@ -173,7 +174,7 @@ public class ListagemGrupo extends AppCompatActivity {
                     AlertDialog.Builder alertDialog = new AlertDialog.Builder(ListagemGrupo.this)
                             .setMessage("ESCOLHA A AÇÃO QUE DESEJA EXECUTAR:")
                             .setPositiveButton("VISUALIZAR INFORMAÇÕES", (dialog1, witch)->{
-                                //redireciona para tela de edição e leva os dados
+                                //redireciona para tela de informações dos grupos e leva os dados
                                 Intent intent = new Intent(ListagemGrupo.this, VisaoGeralFragment.class);
                                 intent.putExtra("idGrupo", idGrupo);
                                 Toast.makeText(ListagemGrupo.this, "ID clicado: " + grupo.getIdGrupo(), Toast.LENGTH_SHORT).show();

@@ -45,6 +45,8 @@
         <activity
             android:name=".ListagemGrupo"
             android:exported="true">
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

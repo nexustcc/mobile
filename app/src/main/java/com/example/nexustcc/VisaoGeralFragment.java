@@ -1,16 +1,20 @@
 package com.example.nexustcc;
 
+import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.nexustcc.model.Grupos;
 import com.example.nexustcc.remote.APIUtil;
@@ -25,36 +29,32 @@ import retrofit2.Response;
 
 public class VisaoGeralFragment extends Fragment {
 
+
+
     /*DECLARAÇÃO DOS ATRIBUTOS*/
 
     RouterInterface routerInterface;
 
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View v = inflater.inflate(R.layout.fragment_visao_geral, container, false);
+        RecyclerView grupos = (RecyclerView) v.findViewById(R.id.recyclerView);
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+        return v;
+    }
 
     public VisaoGeralFragment() {
         // Required empty public constructor
 
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment VisaoGeralFragment.
-     */
     // TODO: Rename and change types and number of parameters
     public static VisaoGeralFragment newInstance(String param1, String param2) {
         VisaoGeralFragment fragment = new VisaoGeralFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+
         fragment.setArguments(args);
         return fragment;
     }
@@ -62,20 +62,133 @@ public class VisaoGeralFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+
+
+        //**  CONECTA O APLICATIVO COM A API**//
+        routerInterface = APIUtil.getGruposInterface();
+
+        //**  EXECUTA A CHAMADA PARA A ROTA DE LISTAGEM DAS INFORMAÇÕES DOS GRUPOS**//
+
+        Call<List<Grupos>> call = routerInterface.getInformacoesGrupos(2);
+
+
+        //PEGAR OS DADOS
+        call.enqueue(new Callback<List<Grupos>>() {
+            @Override
+            //RECEBER OS DADOS
+            public void onResponse(Call<List<Grupos>> call, Response<List<Grupos>> response) {
+
+                Log.d("TESTE1", "ONRESPONSE");
+                Log.d("TESTE1", String.valueOf(response.isSuccessful()));
+
+                if (response.isSuccessful()) {
+
+                    Log.d("TESTE1", "ISSUCCESSFUL");
+
+                    //List<Item> itens = new ArrayList<>();
+
+                    //RECEBE OS DADOS DA API
+
+                    List<Grupos> grupos = new ArrayList<Grupos>();
+                    grupos = response.body();
+
+                     RecyclerView recyclerView = findViewById(R.id.recyclerView);
+                    recyclerView.setAdapter(new VisaoGeralFragment.GrupoAdapter(grupos));
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Grupos>> call, Throwable t) {
+
+                Log.d("TESTE1", "FAILURE");
+                Log.d("TESTE1", t.getMessage());
+
+            }
+        });
+    } //FIM DO MÉTODO ONCREATE
+
+    /*CLASSE DE ADAPTER DA RECYCLERVIEW*/
+
+    private class GrupoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+
+        List<Grupos> grupos;
+
+        public GrupoAdapter(List<Grupos> grupos) {
+            this.grupos = grupos;
         }
 
-    }
+        @NonNull
+        @Override
+        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            return new VisaoGeralFragment.GrupoAdapter.GrupoViewHolder(
+                    LayoutInflater.from(
+                            parent.getContext()).inflate(
+                            R.layout.item_container_visao_geral,
+                            parent,
+                            false
+                    ));
+        }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_visao_geral, container, false);
+        @Override
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+
+            //DADOS DOS GRUPOS
+            // if (getItemViewType(position)== 0){
+
+            Grupos grupo = grupos.get(position);
+
+            Log.d("TESTE-", String.valueOf(grupo.getNomeProjeto()));
+            ((VisaoGeralFragment.GrupoAdapter.GrupoViewHolder) holder).setGrupoData(grupo);
+            //}
+
+        }
+
+        //retornando a quantidade de itens
+        @Override
+        public int getItemCount() {
+            return grupos.size();
+        }
+
+//        public int getItemViewType(int position){
+//            return grupos.get(position);
+//        }
+
+        /*CLASSE DE VIEWHOLDER DA RECYCLERVIEW*/
+
+        class GrupoViewHolder extends RecyclerView.ViewHolder {
+
+            /*ATRIBUTOS DA CLASS GRUPOVIEWHOLDER*/
+
+            private TextView txtTemaDoProjeto, txtDescricaoProjeto;
+            private int idGrupo;
+
+            public GrupoViewHolder(@NonNull View itemView) {
+                super(itemView);
+
+                txtTemaDoProjeto = itemView.findViewById(R.id.txtTemaDoProjeto);
+                txtDescricaoProjeto = itemView.findViewById(R.id.txtDescricaoProjeto);
+            }
+
+              /*MÉTODO QUE CARREGA OS VALORES NOS ELEMENTOS DE TEXTVIEW
+                -txtTemaDoProjeto
+                -txtDescricaoProjeto */
+
+            public void setGrupoData(Grupos grupo) {
+                txtTemaDoProjeto.setText(grupo.getTemaProjeto().toString());
+                txtDescricaoProjeto.setText(grupo.getDescricao().toString());
+                idGrupo = grupo.getIdGrupo();
+
+
+            }
+
+
+        }
+
+
+
     }
 }
+
 
 
 
