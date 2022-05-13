@@ -30,17 +30,17 @@ import retrofit2.Response;
 public class VisaoGeralFragment extends Fragment {
 
 
-
     /*DECLARAÇÃO DOS ATRIBUTOS*/
 
     RouterInterface routerInterface;
+    RecyclerView recyclerView = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_visao_geral, container, false);
-        RecyclerView grupos = (RecyclerView) v.findViewById(R.id.recyclerView);
+        recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
 
         return v;
     }
@@ -91,9 +91,12 @@ public class VisaoGeralFragment extends Fragment {
 
                     List<Grupos> grupos = new ArrayList<Grupos>();
                     grupos = response.body();
+//                    Log.d("GRUPOS", String.valueOf(grupos.get(0).getTemaProjeto()));
+//                    Log.d("GRUPOS", String.valueOf(grupos.get(0).getDescricao()));
+//                    Log.d("GRUPOS", String.valueOf(grupos.get(0).getIdGrupo()));
+//
 
-                     RecyclerView recyclerView = findViewById(R.id.recyclerView);
-                    recyclerView.setAdapter(new VisaoGeralFragment.GrupoAdapter(grupos));
+                    recyclerView.setAdapter(new GrupoAdapter(grupos));
                 }
             }
 
@@ -159,14 +162,14 @@ public class VisaoGeralFragment extends Fragment {
 
             /*ATRIBUTOS DA CLASS GRUPOVIEWHOLDER*/
 
-            private TextView txtTemaDoProjeto, txtDescricaoProjeto;
+            private TextView txtTemaProjetovs, txtDescricaoProjetovs;
             private int idGrupo;
 
             public GrupoViewHolder(@NonNull View itemView) {
                 super(itemView);
 
-                txtTemaDoProjeto = itemView.findViewById(R.id.txtTemaDoProjeto);
-                txtDescricaoProjeto = itemView.findViewById(R.id.txtDescricaoProjeto);
+                txtTemaProjetovs = itemView.findViewById(R.id.txtTemaProjetovs);
+                txtDescricaoProjetovs = itemView.findViewById(R.id.txtDescricaoProjetovs);
             }
 
               /*MÉTODO QUE CARREGA OS VALORES NOS ELEMENTOS DE TEXTVIEW
@@ -174,8 +177,12 @@ public class VisaoGeralFragment extends Fragment {
                 -txtDescricaoProjeto */
 
             public void setGrupoData(Grupos grupo) {
-                txtTemaDoProjeto.setText(grupo.getTemaProjeto().toString());
-                txtDescricaoProjeto.setText(grupo.getDescricao().toString());
+
+                    Log.d("GRUPOS", String.valueOf(grupo.getTemaProjeto()));
+                    Log.d("GRUPOS", String.valueOf(grupo.getDescricao()));
+                    Log.d("GRUPOS", String.valueOf(grupo.getIdGrupo()));
+                txtTemaProjetovs.setText(grupo.getTemaProjeto());
+                txtDescricaoProjetovs.setText(grupo.getDescricao());
                 idGrupo = grupo.getIdGrupo();
 
 
@@ -188,6 +195,7 @@ public class VisaoGeralFragment extends Fragment {
 
     }
 }
+
 
 
 

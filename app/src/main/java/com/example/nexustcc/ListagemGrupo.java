@@ -45,7 +45,7 @@ public class ListagemGrupo extends AppCompatActivity {
         //**  CONECTA O APLICATIVO COM A API**//
         routerInterface = APIUtil.getGruposInterface();
 
-//**  EXECUTA A CHAMADA PARA A ROTA DE LISTAGEM DE GRUPOS**//
+        //**  EXECUTA A CHAMADA PARA A ROTA DE LISTAGEM DE GRUPOS**//
 
         Call<List<Grupos>> call = routerInterface.getGrupos(1);
 
@@ -173,7 +173,7 @@ public class ListagemGrupo extends AppCompatActivity {
                     //o parâmetro é aonde o alertDialog será executado
                     AlertDialog.Builder alertDialog = new AlertDialog.Builder(ListagemGrupo.this)
                             .setMessage("ESCOLHA A AÇÃO QUE DESEJA EXECUTAR:")
-                            .setPositiveButton("VISUALIZAR INFORMAÇÕES", (dialog1, witch)->{
+                            .setPositiveButton("VISUALIZAR INFORMAÇÕES DO GRUPO", (dialog1, witch)->{
                                 //redireciona para tela de informações dos grupos e leva os dados
                                 Intent intent = new Intent(ListagemGrupo.this, VisaoGeralFragment.class);
                                 intent.putExtra("idGrupo", idGrupo);
@@ -186,14 +186,6 @@ public class ListagemGrupo extends AppCompatActivity {
                 });
 
             }
-
-
-
-
-
-
-
-
 
         }
     }

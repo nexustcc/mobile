@@ -33,9 +33,9 @@ public class Grupos {
     @Expose
     private String nomeGrupo;
 
-    @SerializedName("descricao")
+    @SerializedName("descricaoProjeto")
     @Expose
-    private String descricao;
+    private String descricaoProjeto;
 
     @SerializedName("dataApresentacao")
     @Expose
@@ -92,11 +92,11 @@ public class Grupos {
     }
 
     public String getDescricao() {
-        return descricao;
+        return descricaoProjeto;
     }
 
     public void setDescricao(String descricao) {
-        this.descricao = descricao;
+        this.descricaoProjeto = descricao;
     }
 
     public Date getDataApresentacao() {
@@ -121,7 +121,7 @@ public class Grupos {
         this.temaProjeto = temaProjeto;
         this.numeracao = numeracao;
         this.nomeGrupo = nomeGrupo;
-        this.descricao = descricao;
+        this.descricaoProjeto = descricao;
         this.dataApresentacao = dataApresentacao;
         this.horaApresentacao = horaApresentacao;
 

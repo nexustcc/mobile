@@ -21,14 +21,14 @@ import com.google.android.material.navigation.NavigationView;
 public class VisaoGeral extends AppCompatActivity {
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_visao_geral);
+    }
 
 
-            }
+
 
 }
 
