@@ -47,7 +47,7 @@ public class ListagemGrupo extends AppCompatActivity {
 
         //**  EXECUTA A CHAMADA PARA A ROTA DE LISTAGEM DE GRUPOS**//
 
-        Call<List<Grupos>> call = routerInterface.getGrupos(1);
+        Call<List<Grupos>> call = routerInterface.getGrupos(2);
 
 
         //PEGAR OS DADOS

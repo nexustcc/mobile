@@ -39,11 +39,11 @@ public class Grupos {
 
     @SerializedName("dataApresentacao")
     @Expose
-    private Date dataApresentacao;
+    private String dataApresentacao;
 
     @SerializedName("horaApresentacao")
     @Expose
-    private Time horaApresentacao;
+    private String horaApresentacao;
 
     //construtor vazio e um que carrega os dados
 
@@ -99,23 +99,23 @@ public class Grupos {
         this.descricaoProjeto = descricao;
     }
 
-    public Date getDataApresentacao() {
+    public String getDataApresentacao() {
         return dataApresentacao;
     }
 
-    public void setDataApresentacao(Date dataApresentacao) {
+    public void setDataApresentacao(String dataApresentacao) {
         this.dataApresentacao = dataApresentacao;
     }
 
-    public Time getHoraApresentacao() {
+    public String getHoraApresentacao() {
         return horaApresentacao;
     }
 
-    public void setHoraApresentacao(Time horaApresentacao) {
+    public void setHoraApresentacao(String horaApresentacao) {
         this.horaApresentacao = horaApresentacao;
     }
 
-    public Grupos(String nomeProjeto, String temaProjeto, int numeracao, String nomeGrupo, String descricao, Date dataApresentacao, Time horaApresentacao) {
+    public Grupos(String nomeProjeto, String temaProjeto, int numeracao, String nomeGrupo, String descricao, String dataApresentacao, String horaApresentacao) {
 
         this.nomeProjeto = nomeProjeto;
         this.temaProjeto = temaProjeto;

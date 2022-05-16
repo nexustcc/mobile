@@ -69,7 +69,7 @@ public class VisaoGeralFragment extends Fragment {
 
         //**  EXECUTA A CHAMADA PARA A ROTA DE LISTAGEM DAS INFORMAÇÕES DOS GRUPOS**//
 
-        Call<List<Grupos>> call = routerInterface.getInformacoesGrupos(2);
+        Call<List<Grupos>> call = routerInterface.getInformacoesGrupos(12);
 
 
         //PEGAR OS DADOS
@@ -162,12 +162,13 @@ public class VisaoGeralFragment extends Fragment {
 
             /*ATRIBUTOS DA CLASS GRUPOVIEWHOLDER*/
 
-            private TextView txtTemaProjetovs, txtDescricaoProjetovs;
+            private TextView txtNomeGrupo, txtTemaProjetovs, txtDescricaoProjetovs;
             private int idGrupo;
 
             public GrupoViewHolder(@NonNull View itemView) {
                 super(itemView);
 
+                txtNomeGrupo = itemView.findViewById(R.id.txtNomeGrupo);
                 txtTemaProjetovs = itemView.findViewById(R.id.txtTemaProjetovs);
                 txtDescricaoProjetovs = itemView.findViewById(R.id.txtDescricaoProjetovs);
             }
@@ -178,9 +179,11 @@ public class VisaoGeralFragment extends Fragment {
 
             public void setGrupoData(Grupos grupo) {
 
+                    Log.d("GRUPOS", String.valueOf(grupo.getNomeGrupo()));
                     Log.d("GRUPOS", String.valueOf(grupo.getTemaProjeto()));
                     Log.d("GRUPOS", String.valueOf(grupo.getDescricao()));
                     Log.d("GRUPOS", String.valueOf(grupo.getIdGrupo()));
+                txtNomeGrupo.setText(grupo.getNomeGrupo());
                 txtTemaProjetovs.setText(grupo.getTemaProjeto());
                 txtDescricaoProjetovs.setText(grupo.getDescricao());
                 idGrupo = grupo.getIdGrupo();
