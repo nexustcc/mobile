@@ -39,6 +39,7 @@ public class ListagemGrupo extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listagem_grupo);
 
@@ -178,6 +179,7 @@ public class ListagemGrupo extends AppCompatActivity {
                                 Intent intent = new Intent(ListagemGrupo.this, VisaoGeralFragment.class);
                                 intent.putExtra("idGrupo", idGrupo);
                                 Toast.makeText(ListagemGrupo.this, "ID clicado: " + grupo.getIdGrupo(), Toast.LENGTH_SHORT).show();
+
                                 startActivity(intent);
                             })
                             .setNegativeButton("CANCELAR", (dialog1, witch)->{});

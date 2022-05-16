@@ -1,8 +1,10 @@
 package com.example.nexustcc;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -43,6 +45,7 @@ public class VisaoGeralFragment extends Fragment {
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
 
         return v;
+
     }
 
     public VisaoGeralFragment() {
@@ -63,13 +66,20 @@ public class VisaoGeralFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        
+       // para pegarmos os dados da outra tela pelo id
+        int idGrupo = getActivity()
+                .getIntent()
+                .getExtras()
+                .getInt("idGrupo");
+
 
         //**  CONECTA O APLICATIVO COM A API**//
         routerInterface = APIUtil.getGruposInterface();
 
         //**  EXECUTA A CHAMADA PARA A ROTA DE LISTAGEM DAS INFORMAÇÕES DOS GRUPOS**//
 
-        Call<List<Grupos>> call = routerInterface.getInformacoesGrupos(12);
+        Call<List<Grupos>> call = routerInterface.getInformacoesGrupos(3);
 
 
         //PEGAR OS DADOS
@@ -187,6 +197,7 @@ public class VisaoGeralFragment extends Fragment {
                 txtTemaProjetovs.setText(grupo.getTemaProjeto());
                 txtDescricaoProjetovs.setText(grupo.getDescricao());
                 idGrupo = grupo.getIdGrupo();
+
 
 
             }
