@@ -197,6 +197,7 @@ public class VisaoGeralFragment extends Fragment {
                 txtTemaProjetovs.setText(grupo.getTemaProjeto());
                 txtDescricaoProjetovs.setText(grupo.getDescricao());
                 idGrupo = grupo.getIdGrupo();
+//                grupo.setIdGrupo(idGrupo);
 
 
 

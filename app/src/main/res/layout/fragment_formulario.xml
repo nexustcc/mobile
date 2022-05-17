@@ -11,7 +11,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <RelativeLayout
             android:layout_width="414dp"
@@ -100,10 +101,12 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:gravity="center"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:background="@drawable/activity_border">
 
                 <TextView
                     android:id="@+id/text_clareza"
+
                     android:gravity="center"
                     android:padding="3dip"
                     android:text="Clareza"
@@ -131,7 +134,8 @@
 
             <TableRow
                 android:gravity="center"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:background="@drawable/activity_border">
 
                 <TextView
                     android:id="@+id/text_objetividade"
@@ -161,7 +165,8 @@
 
             <TableRow
                 android:gravity="center"
-                android:padding="10dp">
+                android:padding="0dp"
+                android:background="@drawable/activity_border">
 
                 <TextView
                     android:id="@+id/text_exposicao_ideias"
@@ -225,7 +230,8 @@
 
             <TableRow
                 android:gravity="center"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:background="@drawable/activity_border">
 
                 <TextView
                     android:id="@+id/text_capacidade_comunicacao"
@@ -254,7 +260,8 @@
 
             <TableRow
                 android:gravity="center"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:background="@drawable/activity_border">
 
                 <TextView
                     android:id="@+id/text_argumemtacao"
@@ -285,7 +292,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:background="@drawable/activity_border">
 
                 <TextView
                     android:id="@+id/text_organizacao_apresentacao"
@@ -315,7 +323,8 @@
 
             <TableRow
                 android:gravity="center"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:background="@drawable/activity_border">
 
                 <TextView
                     android:id="@+id/text_utilizacao_recursos"
@@ -345,7 +354,8 @@
 
             <TableRow
                 android:gravity="center"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:background="@drawable/activity_border">
 
                 <TextView
                     android:id="@+id/text_postura_integrantes"
@@ -374,7 +384,8 @@
 
             <TableRow
                 android:gravity="center"
-                android:padding="10dp">
+                android:padding="10dp"
+                android:background="@drawable/activity_border">
 
                 <TextView
                     android:id="@+id/text_uso_do_tempo"
@@ -401,7 +412,8 @@
 
             //observações
 
-            <TableRow android:padding="20dp">
+            <TableRow android:padding="20dp"
+                android:background="@drawable/activity_border">
 
                 <TextView
                     android:id="@+id/text_observacoes_"
