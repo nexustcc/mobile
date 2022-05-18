@@ -17,6 +17,10 @@ public class Grupos {
     //ficar visivel para a biblioteca
     private int idGrupo;
 
+    @SerializedName("tblGrupoIdGrupo")
+    @Expose
+    private int tblGrupoIdGrupo;
+
     @SerializedName("nomeProjeto")
     @Expose
     private String nomeProjeto;
@@ -45,6 +49,7 @@ public class Grupos {
     @Expose
     private String horaApresentacao;
 
+
     //construtor vazio e um que carrega os dados
 
 
@@ -57,6 +62,14 @@ public class Grupos {
 
     public void setIdGrupo(int idGrupo) {
         this.idGrupo = idGrupo;
+    }
+
+    public int getTblGrupoIdGrupo() {
+        return tblGrupoIdGrupo;
+    }
+
+    public void setTblGrupoIdGrupo(int tblGrupoIdGrupo) {
+        this.tblGrupoIdGrupo = tblGrupoIdGrupo;
     }
 
     public String getNomeProjeto() {
@@ -105,6 +118,8 @@ public class Grupos {
 
     public void setDataApresentacao(String dataApresentacao) {
         this.dataApresentacao = dataApresentacao;
+
+
     }
 
     public String getHoraApresentacao() {
@@ -115,8 +130,10 @@ public class Grupos {
         this.horaApresentacao = horaApresentacao;
     }
 
-    public Grupos(String nomeProjeto, String temaProjeto, int numeracao, String nomeGrupo, String descricao, String dataApresentacao, String horaApresentacao) {
+    public Grupos(int idGrupo, int tblGrupoIdGrupo, String nomeProjeto, String temaProjeto, int numeracao, String nomeGrupo, String descricao, String dataApresentacao, String horaApresentacao) {
 
+        this.idGrupo = idGrupo;
+        this.tblGrupoIdGrupo = tblGrupoIdGrupo;
         this.nomeProjeto = nomeProjeto;
         this.temaProjeto = temaProjeto;
         this.numeracao = numeracao;

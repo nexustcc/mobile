@@ -36,7 +36,6 @@ public class ListagemGrupo extends AppCompatActivity {
 
     RouterInterface routerInterface;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -178,8 +177,7 @@ public class ListagemGrupo extends AppCompatActivity {
                                 //redireciona para tela de informações dos grupos e leva os dados
                                 Intent intent = new Intent(ListagemGrupo.this, VisaoGeralFragment.class);
                                 intent.putExtra("idGrupo", idGrupo);
-                                Toast.makeText(ListagemGrupo.this, "ID clicado: " + grupo.getIdGrupo(), Toast.LENGTH_SHORT).show();
-
+//                                Toast.makeText(ListagemGrupo.this, "ID clicado: " + grupo.getIdGrupo(), Toast.LENGTH_SHORT).show();
                                 startActivity(intent);
                             })
                             .setNegativeButton("CANCELAR", (dialog1, witch)->{});

@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +37,11 @@ public class VisaoGeralFragment extends Fragment {
 
     RouterInterface routerInterface;
     RecyclerView recyclerView = null;
+    List<Grupos> list = new ArrayList<Grupos>();
+
+    EditText txtNomeGrupo;
+    EditText txtTemaProjetovs;
+    EditText txtDescricaoProjetovs;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -66,12 +72,12 @@ public class VisaoGeralFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        
-       // para pegarmos os dados da outra tela pelo id
-        int idGrupo = getActivity()
-                .getIntent()
-                .getExtras()
-                .getInt("idGrupo");
+
+//       // para pegarmos os dados da outra tela pelo id
+//        int idGrupo = getActivity()
+//                .getIntent()
+//                .getExtras()
+//                .getInt("idGrupo");
 
 
         //**  CONECTA O APLICATIVO COM A API**//
@@ -79,8 +85,42 @@ public class VisaoGeralFragment extends Fragment {
 
         //**  EXECUTA A CHAMADA PARA A ROTA DE LISTAGEM DAS INFORMAÇÕES DOS GRUPOS**//
 
-        Call<List<Grupos>> call = routerInterface.getInformacoesGrupos(3);
+        Call<List<Grupos>> call = routerInterface.getInformacoesGrupos(5);
 
+//        Call<List<Grupos>> callGetGrupoID = routerInterface.getGrupoId(idGrupo);
+//
+//        callGetGrupoID.enqueue(new Callback<List<Grupos>>() {
+//            @Override
+//            public void onResponse(Call<List<Grupos>> call, Response<List<Grupos>> response) {
+//
+//                if (response.isSuccessful()) {
+//
+//                    list = response.body();
+//
+//                    txtNomeGrupo.setText(list.get(0).getNomeGrupo());
+//                    txtTemaProjetovs.setText(list.get(0).getTemaProjeto());
+//                    txtDescricaoProjetovs.setText(list.get(0).getTemaProjeto());
+//
+//                    recyclerView.setOnClickListener(view -> {
+//
+//                        Grupos grupo = new Grupos();
+//
+//                        grupo.setNomeGrupo(txtNomeGrupo.getText().toString());
+//                        grupo.setDescricao(txtTemaProjetovs.getText().toString());
+//                        grupo.setDescricao(txtDescricaoProjetovs.getText().toString());
+//                        grupo.setIdGrupo(idGrupo);
+//                        //pegar um grupo que esteja cadastrado no BCD
+//                        grupo.setTblGrupoIdGrupo(3);
+//
+//                    });
+//                }
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<Grupos>> call, Throwable t) {
+//
+//            }
+//        });
 
         //PEGAR OS DADOS
         call.enqueue(new Callback<List<Grupos>>() {
@@ -107,6 +147,7 @@ public class VisaoGeralFragment extends Fragment {
 //
 
                     recyclerView.setAdapter(new GrupoAdapter(grupos));
+
                 }
             }
 

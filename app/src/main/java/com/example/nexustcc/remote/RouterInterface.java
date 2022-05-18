@@ -20,6 +20,8 @@ public interface RouterInterface {
         @GET("mobile/avaliador/listarGrupo/{idGrupo}")
         Call<List<Grupos>>getInformacoesGrupos(@Path("idGrupo") int idGrupo);
 
-
+        //trazendo as informaçõesdo grupo pelo ID
+        @GET("mobile/avaliador/listarGrupo/{idGrupo}")
+        Call<List<Grupos>>getGrupoId(@Path("idGrupo") int idGrupo);
 
 }

@@ -16,7 +16,7 @@
         <item
             android:id="@+id/formulario"
             android:icon="@drawable/ic_formulario"
-            android:title="FORMULARIO"></item>
+            android:title="FORMULÁRIO"></item>
 
     </group>
 </menu>
