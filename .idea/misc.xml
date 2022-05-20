@@ -90,12 +90,13 @@
         <entry key="app/src/main/res/layout/activity_listagem_grupo.xml" value="0.3817701453104359" />
         <entry key="app/src/main/res/layout/activity_listagem_grupos.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_listagem_grupos_antiga.xml" value="0.5911458333333334" />
-        <entry key="app/src/main/res/layout/activity_listagem_itens.xml" value="0.47611202635914335" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.5042016806722689" />
+        <entry key="app/src/main/res/layout/activity_listagem_itens.xml" value="0.2782101167315175" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.2952586206896552" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_menu.xml" value="0.5911458333333334" />
         <entry key="app/src/main/res/layout/activity_menu2.xml" value="0.40208333333333335" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.5911458333333334" />
+        <entry key="app/src/main/res/layout/activity_teste.xml" value="0.3648366921473245" />
         <entry key="app/src/main/res/layout/activity_visao_geral.xml" value="0.37142857142857144" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.5765625" />
         <entry key="app/src/main/res/layout/container_grupos.xml" value="0.5" />

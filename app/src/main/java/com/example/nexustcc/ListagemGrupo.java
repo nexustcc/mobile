@@ -23,7 +23,6 @@ import com.example.nexustcc.remote.RouterInterface;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -126,6 +125,7 @@ public class ListagemGrupo extends AppCompatActivity {
                 Grupos grupo = grupos.get(position);
 
                 Log.d("TESTE-", String.valueOf(grupo.getNomeProjeto()));
+            Log.d("ID-GRUPO", String.valueOf(grupo.getIdGrupo()));
                 ((GrupoAdapter.GrupoViewHolder) holder).setGrupoData(grupo);
             //}
 
@@ -165,6 +165,7 @@ public class ListagemGrupo extends AppCompatActivity {
                 txtNomeDoProjeto.setText(grupo.getNomeProjeto().toString());
                 txtTemaDoProjeto.setText(grupo.getTemaProjeto().toString());
                 idGrupo = grupo.getIdGrupo();
+                Log.d("OBJ-GRUPO", String.valueOf(grupo.getIdGrupo()));
 
                 //* AÇÃO DE CLICK PARA EXIBIR INFORMAÇÕES DO GRUPO*//
 
@@ -175,13 +176,12 @@ public class ListagemGrupo extends AppCompatActivity {
                             .setMessage("ESCOLHA A AÇÃO QUE DESEJA EXECUTAR:")
                             .setPositiveButton("VISUALIZAR INFORMAÇÕES DO GRUPO", (dialog1, witch)->{
                                 //redireciona para tela de informações dos grupos e leva os dados
-                                Intent intent = new Intent(ListagemGrupo.this, VisaoGeralFragment.class);
+                                Intent intent = new Intent(ListagemGrupo.this, Teste.class);
                                 intent.putExtra("idGrupo", idGrupo);
-//                                Toast.makeText(ListagemGrupo.this, "ID clicado: " + grupo.getIdGrupo(), Toast.LENGTH_SHORT).show();
+                                //Log.d("ID0GRUPO", String.valueOf(idGrupo));
                                 startActivity(intent);
                             })
                             .setNegativeButton("CANCELAR", (dialog1, witch)->{});
-
                     alertDialog.show();
                 });
 

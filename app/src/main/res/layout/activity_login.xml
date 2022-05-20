@@ -78,6 +78,7 @@
 
 
             <Button
+                android:id="@+id/btn_logar"
                 android:layout_width="354dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

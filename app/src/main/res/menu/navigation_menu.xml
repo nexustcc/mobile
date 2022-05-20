@@ -8,10 +8,10 @@
             android:icon="@drawable/ic_visao_geral"
             android:title="VISÃO GERAL"></item>
 
-        <item
-            android:id="@+id/integrantes"
-            android:icon="@drawable/ic_integrantes"
-            android:title="INTEGRANTES"></item>
+<!--        <item-->
+<!--            android:id="@+id/integrantes"-->
+<!--            android:icon="@drawable/ic_integrantes"-->
+<!--            android:title="INTEGRANTES"></item>-->
 
         <item
             android:id="@+id/formulario"

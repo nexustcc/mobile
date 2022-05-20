@@ -14,6 +14,9 @@
         android:theme="@style/Theme.NEXUSTCC"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".Teste"
+            android:exported="false" />
+        <activity
             android:name=".ListagemItens"
             android:exported="false" />
         <activity
@@ -43,10 +46,8 @@
         <!-- android:name=".MainActivity" -->
         <!-- android:exported="false" /> -->
         <activity
-            android:name=".MainActivity"
+            android:name=".ListagemGrupo"
             android:exported="true">
-
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
