@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
+
                     case R.id.formulario:
                         replaceFragment(new FormularioFragment());
                         drawerLayout.closeDrawer(GravityCompat.START);

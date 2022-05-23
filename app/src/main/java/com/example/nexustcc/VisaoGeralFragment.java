@@ -100,7 +100,7 @@ public class VisaoGeralFragment extends Fragment {
     } //FIM DO MÉTODO ONCREATE
 
     /*CLASSE DE ADAPTER DA RECYCLERVIEW*/
-    private class GrupoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+    class GrupoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
         List<Grupos> grupos;
 

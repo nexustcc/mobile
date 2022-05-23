@@ -28,12 +28,16 @@
             </RelativeLayout>
 
             <TextView
+                android:id="@+id/txtNomeGrupo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="NEXUS TCC"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
                 android:textColor="@color/black"
-                android:textSize="24sp"
+                android:textSize="45sp"
                 android:textStyle="bold" />
         </RelativeLayout>
 
@@ -63,6 +67,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/ruim"
                     android:layout_gravity="center"
                     android:gravity="right"
                     android:padding="3dip"
@@ -72,6 +77,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/regular"
                     android:layout_column="1"
                     android:layout_gravity="center"
                     android:gravity="right"
@@ -82,6 +88,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/otimo"
                     android:layout_gravity="center"
                     android:gravity="right"
                     android:padding="3dip"
@@ -104,7 +111,7 @@
                 android:padding="8dp">
 
                 <TextView
-                    android:id="@+id/text_clareza"
+                    android:id="@+id/clareza"
                     android:gravity="center"
                     android:padding="3dip"
                     android:text="Clareza"
@@ -119,14 +126,14 @@
 
                 <CheckBox
                     android:id="@+id/cb_clareza_2"
-                    android:layout_marginEnd="5dp"
                     android:layout_marginStart="22dp"
+                    android:layout_marginEnd="5dp"
                     android:button="@drawable/customizacao_checkbox"></CheckBox>
 
                 <CheckBox
                     android:id="@+id/cb_clareza_3"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="15dp"></CheckBox>
+                    android:layout_marginStart="15dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
             </TableRow>
 
@@ -141,7 +148,7 @@
                 android:padding="8dp">
 
                 <TextView
-                    android:id="@+id/text_objetividade"
+                    android:id="@+id/objetividade"
                     android:layout_width="168dp"
                     android:gravity="center"
                     android:padding="3dip"
@@ -150,19 +157,19 @@
 
                 <CheckBox
                     android:id="@+id/cb_objetividade_1"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="12dp"></CheckBox>
+                    android:layout_marginStart="12dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
                 <CheckBox
                     android:id="@+id/cb_objetividade_2"
+                    android:layout_marginStart="22dp"
                     android:layout_marginEnd="5dp"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="22dp"></CheckBox>
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
                 <CheckBox
                     android:id="@+id/cb_objetividade_3"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="15dp"></CheckBox>
+                    android:layout_marginStart="15dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
             </TableRow>
 
@@ -174,7 +181,7 @@
                 android:padding="0dp">
 
                 <TextView
-                    android:id="@+id/text_exposicao_ideias"
+                    android:id="@+id/fluenciaExposicaoIdeias"
                     android:layout_width="114dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -185,19 +192,19 @@
 
                 <CheckBox
                     android:id="@+id/cb_exposicao_ideias_1"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="12dp"></CheckBox>
+                    android:layout_marginStart="12dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
                 <CheckBox
                     android:id="@+id/cb_exposicao_ideias_2"
+                    android:layout_marginStart="22dp"
                     android:layout_marginEnd="5dp"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="22dp"></CheckBox>
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
                 <CheckBox
                     android:id="@+id/cb_exposicao_ideias_3"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="15dp"></CheckBox>
+                    android:layout_marginStart="15dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
             </TableRow>
 
@@ -211,7 +218,7 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/text_dominio_conteudo"
+                    android:id="@+id/dominioConteudo"
                     android:layout_width="wrap_content"
                     android:gravity="center"
                     android:padding="3dip"
@@ -220,19 +227,19 @@
 
                 <CheckBox
                     android:id="@+id/cb_dominio_conteudo_1"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="12dp"></CheckBox>
+                    android:layout_marginStart="12dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
                 <CheckBox
                     android:id="@+id/cb_dominio_conteudo_2"
+                    android:layout_marginStart="22dp"
                     android:layout_marginEnd="5dp"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="22dp"></CheckBox>
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
                 <CheckBox
                     android:id="@+id/cb_dominio_conteudo_3"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="15dp"></CheckBox>
+                    android:layout_marginStart="15dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
             </TableRow>
 
@@ -244,7 +251,7 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/text_capacidade_comunicacao"
+                    android:id="@+id/capacidadeComunicacao"
                     android:gravity="center"
                     android:padding="3dip"
                     android:text="Capacidade de\nComunicação"
@@ -252,19 +259,19 @@
 
                 <CheckBox
                     android:id="@+id/cb_capacidade_comunicacao_1"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="12dp"></CheckBox>
+                    android:layout_marginStart="12dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
                 <CheckBox
                     android:id="@+id/cb_capacidade_comunicacao_2"
+                    android:layout_marginStart="22dp"
                     android:layout_marginEnd="5dp"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="22dp"></CheckBox>
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
                 <CheckBox
                     android:id="@+id/cb_capacidade_comunicacao_3"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="15dp"></CheckBox>
+                    android:layout_marginStart="15dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
             </TableRow>
 
@@ -278,27 +285,27 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/text_argumemtacao"
+                    android:id="@+id/argumentacao"
                     android:gravity="center"
                     android:padding="3dip"
                     android:text="Argumentação"
                     android:textStyle="bold" />
 
                 <CheckBox
-                    android:id="@+id/cb_argumemtacao_1"
+                    android:id="@+id/cb_argumentacao_1"
                     android:layout_marginStart="12dp"
                     android:button="@drawable/customizacao_checkbox"></CheckBox>
 
                 <CheckBox
-                    android:id="@+id/cb_argumemtacao_2"
+                    android:id="@+id/cb_argumentacao_2"
+                    android:layout_marginStart="22dp"
                     android:layout_marginEnd="5dp"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="22dp"></CheckBox>
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
                 <CheckBox
-                    android:id="@+id/cb_argumemtacao_3"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="15dp"></CheckBox>
+                    android:id="@+id/cb_argumentacao_3"
+                    android:layout_marginStart="15dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
             </TableRow>
 
@@ -314,7 +321,7 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/text_organizacao_apresentacao"
+                    android:id="@+id/organizacao"
                     android:gravity="center"
                     android:padding="3dip"
                     android:text="Organização da\nApresentação"
@@ -323,19 +330,19 @@
                 <CheckBox
 
                     android:id="@+id/cb_organizacao_apresentacao_1"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="12dp"></CheckBox>
+                    android:layout_marginStart="12dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
                 <CheckBox
                     android:id="@+id/cb_organizacao_apresentacao_2"
+                    android:layout_marginStart="22dp"
                     android:layout_marginEnd="5dp"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="22dp"></CheckBox>
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
                 <CheckBox
                     android:id="@+id/cb_organizacao_apresentacao_3"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="15dp"></CheckBox>
+                    android:layout_marginStart="15dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
             </TableRow>
 
@@ -349,28 +356,28 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/text_utilizacao_recursos"
+                    android:id="@+id/aproveitamentoRecursos"
                     android:gravity="center"
                     android:padding="3dip"
 
-                    android:text="Utilização dos\nRecursos"
+                    android:text="Aproveitamento dos\nRecursos"
                     android:textStyle="bold" />
 
                 <CheckBox
-                    android:id="@+id/cb_utilizacao_recursos_1"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="12dp"></CheckBox>
+                    android:id="@+id/cb_aproveitamento_recursos_1"
+                    android:layout_marginStart="12dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
                 <CheckBox
-                    android:id="@+id/cb_utilizacao_recursos_2"
+                    android:id="@+id/cb_aproveitamento_recursos_2"
+                    android:layout_marginStart="22dp"
                     android:layout_marginEnd="5dp"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="22dp"></CheckBox>
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
                 <CheckBox
-                    android:id="@+id/cb_utilizacao_recursos_3"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="15dp"></CheckBox>
+                    android:id="@+id/cb_aproveitamento_recursos_3"
+                    android:layout_marginStart="15dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
             </TableRow>
 
@@ -384,7 +391,7 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/text_postura_integrantes"
+                    android:id="@+id/posturaIntegrantes"
                     android:gravity="center"
                     android:padding="3dip"
                     android:text="Postura dos\nIntegrantes"
@@ -392,19 +399,19 @@
 
                 <CheckBox
                     android:id="@+id/cb_postura_integrantes_1"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="12dp"></CheckBox>
+                    android:layout_marginStart="12dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
                 <CheckBox
                     android:id="@+id/cb_postura_integrantes_2"
+                    android:layout_marginStart="22dp"
                     android:layout_marginEnd="5dp"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="22dp"></CheckBox>
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
                 <CheckBox
                     android:id="@+id/cb_postura_integrantes_3"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="15dp"></CheckBox>
+                    android:layout_marginStart="15dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
             </TableRow>
 
@@ -418,7 +425,7 @@
                 android:padding="10dp">
 
                 <TextView
-                    android:id="@+id/text_uso_do_tempo"
+                    android:id="@+id/usoTempo"
                     android:gravity="center"
                     android:padding="3dip"
                     android:text="Uso do Tempo"
@@ -426,19 +433,19 @@
 
                 <CheckBox
                     android:id="@+id/cb_uso_do_tempo_1"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="12dp"></CheckBox>
+                    android:layout_marginStart="12dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
                 <CheckBox
                     android:id="@+id/cb_uso_do_tempo_2"
+                    android:layout_marginStart="22dp"
                     android:layout_marginEnd="5dp"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="22dp"></CheckBox>
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
                 <CheckBox
                     android:id="@+id/cb_uso_do_tempo_3"
-                    android:button="@drawable/customizacao_checkbox"
-                    android:layout_marginStart="15dp"></CheckBox>
+                    android:layout_marginStart="15dp"
+                    android:button="@drawable/customizacao_checkbox"></CheckBox>
 
             </TableRow>
 
@@ -451,7 +458,7 @@
                 android:padding="2dp">
 
                 <TextView
-                    android:id="@+id/text_observacoes_"
+                    android:id="@+id/observacoes"
                     android:layout_marginStart="40dp"
                     android:gravity="center"
                     android:text="Observações:"
@@ -464,6 +471,7 @@
             </TableRow>
 
             <Button
+                android:id="@+id/btn_enviar"
                 android:layout_width="373dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -472,6 +480,7 @@
                 android:layout_marginEnd="30dp"
                 android:background="@drawable/button"
                 android:text="ENVIAR"
+                android:textColor="@color/white"
                 app:backgroundTint="@color/blue_4"></Button>
 
 

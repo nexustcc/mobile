@@ -10,7 +10,6 @@ public class Grupos {
 
     //declarando os atributos
 
-
     @SerializedName("idGrupo")
     //mapeando dentro do gson o "idGrupo"
     @Expose
