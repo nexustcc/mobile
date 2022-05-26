@@ -2,14 +2,17 @@
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 
+import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.Toast;
 
 
 import java.util.ArrayList;
@@ -19,6 +22,8 @@ import java.util.List;
 
      private final List<String> idSelecionados = new ArrayList<>();
 
+
+     CheckBox checkbox;
 
      //DECLARAÇÃO DO CHECKBOX
      private CheckBox
@@ -32,6 +37,10 @@ import java.util.List;
              cb22, cb23, cb24,
              cb25, cb26, cb27,
              cb28, cb29, cb30;
+
+     private Button
+            btnEnviar;
+
 
 
      @Override
@@ -72,12 +81,30 @@ import java.util.List;
          cb28 = (CheckBox) v.findViewById(R.id.cb_uso_do_tempo_1);
          cb29 = (CheckBox) v.findViewById(R.id.cb_uso_do_tempo_2);
          cb30 = (CheckBox) v.findViewById(R.id.cb_uso_do_tempo_3);
+         btnEnviar = (Button) v.findViewById(R.id.btnEnviar);
+
+
+         btnEnviar.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 StringBuffer resultado = new StringBuffer();
+                 resultado.append("Os critérios foram: ");
+                 if (cb01.isChecked()){
+                     resultado.append("\n" + cb01.getText().toString());
+                 }
+
+             }
+         });
 
          addCheckBoxChecked();
           return v;
-          
+
+
+
+
 
      }
+
 
      //VALIDAÇÃO DO CHECKBOX
      public void addCheckBoxChecked() {
