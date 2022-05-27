@@ -8,9 +8,8 @@ import android.widget.EditText;
 
 public class Login extends AppCompatActivity {
 
-    private EditText edit_text_email;
-    private EditText edit_text_senha;
-    private Button btn_logar;
+
+    private Button btnLogar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

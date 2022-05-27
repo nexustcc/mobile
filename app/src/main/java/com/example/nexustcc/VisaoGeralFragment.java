@@ -1,5 +1,6 @@
 package com.example.nexustcc;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -96,6 +97,8 @@ public class VisaoGeralFragment extends Fragment {
                 Log.d("ERRO-CALL", t.getMessage());
             }
         });
+
+
 
     } //FIM DO MÉTODO ONCREATE
 

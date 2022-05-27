@@ -5,7 +5,9 @@ import com.example.nexustcc.model.Grupos;
 import java.util.List;
 
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface RouterInterface {
@@ -19,6 +21,9 @@ public interface RouterInterface {
         //requisição de leitura
         @GET("mobile/avaliador/listarGrupo/{idGrupo}")
         Call<List<Grupos>>getInformacoesGrupos(@Path("idGrupo") int idGrupo);
+
+        @POST("/usuario/cadastrarUsuario")
+        Call<Grupos> enviarFormularip(@Body Grupos grupos);
 
 
 

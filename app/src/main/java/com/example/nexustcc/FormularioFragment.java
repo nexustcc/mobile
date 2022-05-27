@@ -6,22 +6,29 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 
-import android.os.Message;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+
+import com.example.nexustcc.model.Grupos;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
  public class FormularioFragment extends Fragment {
 
      private final List<String> idSelecionados = new ArrayList<>();
-
 
      CheckBox checkbox;
 
@@ -38,8 +45,24 @@ import java.util.List;
              cb25, cb26, cb27,
              cb28, cb29, cb30;
 
-     private Button
-            btnEnviar;
+
+     String clareza;
+     String objetividade;
+     String fluenciaExposicaoIdeias;
+     String dominioConteudo;
+     String capacidadeComunicacao;
+     String argumentacao;
+     String organizacaoApresentacao;
+     String aproveitamentoRecursos;
+     String posturaIntegrantes;
+     String usoTempo;
+     String observacoesFinais;
+
+     EditText observacoes;
+
+
+     private Button btnEnviar;
+
 
 
 
@@ -82,27 +105,192 @@ import java.util.List;
          cb29 = (CheckBox) v.findViewById(R.id.cb_uso_do_tempo_2);
          cb30 = (CheckBox) v.findViewById(R.id.cb_uso_do_tempo_3);
          btnEnviar = (Button) v.findViewById(R.id.btnEnviar);
+         observacoes = (EditText) v.findViewById(R.id.edit_text_observacoes);
 
 
-         btnEnviar.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-                 StringBuffer resultado = new StringBuffer();
-                 resultado.append("Os critérios foram: ");
-                 if (cb01.isChecked()){
-                     resultado.append("\n" + cb01.getText().toString());
-                 }
+         btnEnviar.setOnClickListener(view -> {
 
+//             Log.d("TESTE", "CLICK!");
+
+
+             /**CLAREZA**/
+             if (cb01.isChecked()) {
+                 clareza = "RUIM";
+                 Log.d("Forms", "Clareza: " + clareza);
              }
+
+             if (cb02.isChecked()) {
+                 clareza = "REGULAR";
+                 Log.d("Forms", "Clareza: " + clareza);
+             }
+
+             if (cb03.isChecked()) {
+                 Log.d("TESTE", "CLAREZA 3");
+                 clareza = "ÓTIMO";
+                 Log.d("Forms", "Clareza: " + clareza);
+             }
+
+             /**OBJETIVIDADE**/
+             if (cb04.isChecked()) {
+                 objetividade = "RUIM";
+                 Log.d("Forms", "Objetividade: " + objetividade);
+             }
+
+             if (cb05.isChecked()) {
+                 objetividade = "REGULAR";
+                 Log.d("Forms", "Objetividade: " + objetividade);
+             }
+
+             if (cb06.isChecked()) {
+                 objetividade = "ÓTIMO";
+                 Log.d("Forms", "Objetividade: " + objetividade);
+             }
+
+             /**FLUÊNCIA NA EXPOSIÇÃO DE IDEIAS**/
+             if (cb07.isChecked()) {
+                 fluenciaExposicaoIdeias = "RUIM";
+                 Log.d("Forms", "Fluência na Exposição de Ideias: " + fluenciaExposicaoIdeias);
+             }
+
+             if (cb08.isChecked()) {
+                 fluenciaExposicaoIdeias = "REGULAR";
+                 Log.d("Forms", "Fluência na Exposição de Ideias: " + fluenciaExposicaoIdeias);
+             }
+
+             if (cb09.isChecked()) {
+                 fluenciaExposicaoIdeias = "ÓTIMO";
+                 Log.d("Forms", "Fluência na Exposição de Ideias: " + fluenciaExposicaoIdeias);
+             }
+
+             /**DOMÍNIO DE CONTEÚDO**/
+
+             if (cb10.isChecked()) {
+                 dominioConteudo = "RUIM";
+                 Log.d("Forms", "Domínio de conteúdo: " + dominioConteudo);
+             }
+
+             if (cb11.isChecked()) {
+                 dominioConteudo = "REGULAR";
+                 Log.d("Forms", "Domínio de conteúdo: " + dominioConteudo);
+             }
+
+             if (cb12.isChecked()) {
+                 dominioConteudo = "ÓTIMO";
+                 Log.d("Forms", "Domínio de conteúdo: " + dominioConteudo);
+             }
+
+             /**CAPACIDADE DE COMUNICAÇÃO**/
+
+             if (cb13.isChecked()) {
+                 capacidadeComunicacao = "RUIM";
+                 Log.d("Forms", "Capacidade de comunicação: " + capacidadeComunicacao);
+             }
+
+             if (cb14.isChecked()) {
+                 capacidadeComunicacao = "REGULAR";
+                 Log.d("Forms", "Capacidade de comunicação: " + capacidadeComunicacao);
+             }
+
+             if (cb15.isChecked()) {
+                 capacidadeComunicacao = "ÓTIMO";
+                 Log.d("Forms", "Capacidade de comunicação: " + capacidadeComunicacao);
+             }
+
+             /**ARGUMENTAÇÃO**/
+
+             if (cb16.isChecked()) {
+                 argumentacao = "RUIM";
+                 Log.d("Forms", "Argumentação: " + argumentacao);
+             }
+
+             if (cb17.isChecked()) {
+                 argumentacao = "REGULAR";
+                 Log.d("Forms", "Argumentação: " + argumentacao);
+             }
+
+             if (cb18.isChecked()) {
+                 argumentacao = "ÓTIMO";
+                 Log.d("Forms", "Argumentação: " + argumentacao);
+             }
+
+             /**ORGANIZAÇÃO DA APRESENTAÇÃO**/
+
+             if (cb19.isChecked()) {
+                 organizacaoApresentacao = "RUIM";
+                 Log.d("Forms", "Organização da apresentação: " + organizacaoApresentacao);
+             }
+
+             if (cb20.isChecked()) {
+                 organizacaoApresentacao = "REGULAR";
+                 Log.d("Forms", "Organização da apresentação: " + organizacaoApresentacao);
+             }
+
+             if (cb21.isChecked()) {
+                 organizacaoApresentacao = "ÓTIMO";
+                 Log.d("Forms", "Organização da apresentação: " + organizacaoApresentacao);
+             }
+
+             /**APROVEITAMENTO DOS RECURSOS**/
+
+             if (cb22.isChecked()) {
+                 aproveitamentoRecursos = "RUIM";
+                 Log.d("Forms", "Aproveitamento de recursos: " + aproveitamentoRecursos);
+             }
+
+             if (cb23.isChecked()) {
+                 aproveitamentoRecursos = "REGULAR";
+                 Log.d("Forms", "Aproveitamento de recursos: " + aproveitamentoRecursos);
+             }
+
+             if (cb24.isChecked()) {
+                 aproveitamentoRecursos = "ÓTIMO";
+                 Log.d("Forms", "Aproveitamento de recursos: " + aproveitamentoRecursos);
+             }
+
+             /**POSTURA DOS INTEGRANTES**/
+
+             if (cb25.isChecked()) {
+                 posturaIntegrantes = "RUIM";
+                 Log.d("Forms", "Postura dos integrantes: " + posturaIntegrantes);
+             }
+
+             if (cb26.isChecked()) {
+                 posturaIntegrantes = "REGULAR";
+                 Log.d("Forms", "Postura dos integrantes: " + posturaIntegrantes);
+             }
+
+             if (cb27.isChecked()) {
+                 posturaIntegrantes = "ÓTIMO";
+                 Log.d("Forms", "Postura dos integrantes: " + posturaIntegrantes);
+             }
+
+             /**USO DO TEMPO**/
+
+             if (cb28.isChecked()) {
+                 usoTempo = "RUIM";
+                 Log.d("Forms", "Uso do tempo: " + usoTempo);
+             }
+
+             if (cb29.isChecked()) {
+                 usoTempo = "REGULAR";
+                 Log.d("Forms", "Uso do tempo: " + usoTempo);
+             }
+
+             if (cb30.isChecked()) {
+                 usoTempo = "ÓTIMO";
+                 Log.d("Forms", "Uso do tempo: " + usoTempo);
+             }
+
+             /**OBSERVÇÕES**/
+             //variavel
+             observacoesFinais = observacoes.getText().toString();
+             Log.d("Forms", "Observações: " + observacoesFinais);
+
+
          });
 
          addCheckBoxChecked();
-          return v;
-
-
-
-
-
+         return v;
      }
 
 
@@ -392,7 +580,12 @@ import java.util.List;
                  cb29.setChecked(false);
              }
 
-             });//FIM
+
+
+
+         });//FIM
+
+ 
 
 //    public FormularioFragment() {
 //             // Required empty public constructor
@@ -425,7 +618,8 @@ import java.util.List;
 //        return inflater.inflate(R.layout.fragment_formulario, container, false);
 //    }
      }
-
  }
+
+// }
 
 
