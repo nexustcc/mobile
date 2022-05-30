@@ -2,8 +2,9 @@
 
 import android.os.Bundle;
 
-import androidx.annotation.Nullable;
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.util.Log;
@@ -17,7 +18,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.nexustcc.model.Avaliacao;
 import com.example.nexustcc.model.Grupos;
+import com.example.nexustcc.remote.APIUtil;
+import com.example.nexustcc.remote.RouterInterface;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +34,7 @@ import retrofit2.Response;
 
      private final List<String> idSelecionados = new ArrayList<>();
 
-     CheckBox checkbox;
+     int idGrupo;
 
      //DECLARAÇÃO DO CHECKBOX
      private CheckBox
@@ -45,7 +49,7 @@ import retrofit2.Response;
              cb25, cb26, cb27,
              cb28, cb29, cb30;
 
-
+     int idAvaliacao;
      String clareza;
      String objetividade;
      String fluenciaExposicaoIdeias;
@@ -57,18 +61,23 @@ import retrofit2.Response;
      String posturaIntegrantes;
      String usoTempo;
      String observacoesFinais;
-
      EditText observacoes;
 
 
      private Button btnEnviar;
 
 
-
+     /**
+      * ATRIBUTO DE REPRESENTAÇÃO DAS ROTAS
+      **/
+     RouterInterface routerInterface;
 
      @Override
      public View onCreateView(LayoutInflater inflater, ViewGroup container,
                               Bundle savedInstanceState) {
+
+         //**  CONECTA O APLICATIVO COM A API**//
+         routerInterface = APIUtil.getGruposInterface();
 
          // Inflate the layout for this fragment
 
@@ -287,11 +296,54 @@ import retrofit2.Response;
              Log.d("Forms", "Observações: " + observacoesFinais);
 
 
+             /** CRIA UM OBJETO DA MODEL DE AVALIACAO **/
+             Avaliacao avaliacao = new Avaliacao();
+
+             /** CARREGA OS DADOS DO FORMULÁRIO NO OBJETO DE MODEL **/
+             avaliacao.setIdAvaliacao(idAvaliacao);
+             avaliacao.setClareza(clareza);
+             avaliacao.setObjetividade(objetividade);
+             avaliacao.setFluenciaExposicaoIdeias(fluenciaExposicaoIdeias);
+             avaliacao.setDominioConteudo(dominioConteudo);
+             avaliacao.setCapacidadeComunicacao(capacidadeComunicacao);
+             avaliacao.setArgumentacao(argumentacao);
+             avaliacao.setOrganizacao(organizacaoApresentacao);
+             avaliacao.setAproveitamentoRecursos(aproveitamentoRecursos);
+             avaliacao.setPosturaIntegrantes(posturaIntegrantes);
+             avaliacao.setUsoTempo(usoTempo);
+             avaliacao.setObservacoes(observacoes.getText().toString());
+
+             /** PASSAR OS DADOS PARA A APIREST **/
+
+             routerInterface = APIUtil.getGruposInterface();
+//             enviarFormulario(avaliacao);
+
          });
 
          addCheckBoxChecked();
          return v;
      }
+
+
+//     public void enviarFormulario(Avaliacao avaliacao){
+//
+//         Call<Avaliacao> call = RouterInterface.enviarFormulario(avaliacao);
+//
+//         call.enqueue(new Callback<Grupos>() {
+//             @Override
+//             public void onResponse(Call<Grupos> call, Response<Grupos> response) {
+//                 Toast.makeText(FormularioFragment.this,
+//                         "FORMULÁRIO ENVIADO COM SUCESSO",
+//                         Toast.LENGTH_LONG).show();
+//             }
+//
+//             @Override
+//             public void onFailure(Call<Grupos> call, Throwable t) {
+//                 Log.d("ERRO-API", t.getMessage());
+//
+//             }
+//         });
+//     }
 
 
      //VALIDAÇÃO DO CHECKBOX
@@ -581,11 +633,33 @@ import retrofit2.Response;
              }
 
 
-
-
          });//FIM
 
- 
+
+         class GrupoViewHolder extends RecyclerView.ViewHolder {
+
+             /*ATRIBUTOS DA CLASS GRUPOVIEWHOLDER*/
+             private TextView txtNomeGrupo;
+             private int idGrupo;
+
+             public GrupoViewHolder(@NonNull View itemView) {
+                 super(itemView);
+
+                 txtNomeGrupo = itemView.findViewById(R.id.txtNomeGrupo);
+
+             }
+
+             /*MÉTODO QUE CARREGA OS VALORES NOS ELEMENTOS DE TEXTVIEW
+               -txtNomeGrupo */
+             public void setGrupoData(Grupos grupo) {
+
+                 Log.d("GRUPOS", String.valueOf(grupo.getNomeGrupo()));
+
+                 txtNomeGrupo.setText(grupo.getNomeGrupo());
+                 idGrupo = grupo.getIdGrupo();
+
+             }
+
 
 //    public FormularioFragment() {
 //             // Required empty public constructor
@@ -617,6 +691,7 @@ import retrofit2.Response;
 //        // Inflate the layout for this fragment
 //        return inflater.inflate(R.layout.fragment_formulario, container, false);
 //    }
+         }
      }
  }
 
