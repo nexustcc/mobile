@@ -32,6 +32,9 @@ import retrofit2.Response;
 
  public class FormularioFragment extends Fragment {
 
+     /*DECLARAÇÃO DOS ATRIBUTOS*/
+     RouterInterface routerInterface;
+     List<Grupos> list = new ArrayList<Grupos>();
      private final List<String> idSelecionados = new ArrayList<>();
 
      int idGrupo;
@@ -65,12 +68,6 @@ import retrofit2.Response;
 
 
      private Button btnEnviar;
-
-
-     /**
-      * ATRIBUTO DE REPRESENTAÇÃO DAS ROTAS
-      **/
-     RouterInterface routerInterface;
 
      @Override
      public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -324,7 +321,7 @@ import retrofit2.Response;
          return v;
      }
 
-
+//
 //     public void enviarFormulario(Avaliacao avaliacao){
 //
 //         Call<Avaliacao> call = RouterInterface.enviarFormulario(avaliacao);
@@ -660,7 +657,6 @@ import retrofit2.Response;
 
              }
 
-
 //    public FormularioFragment() {
 //             // Required empty public constructor
 //         }
@@ -676,10 +672,15 @@ import retrofit2.Response;
 //             return fragment;
 //         }
 //
-//         @Override
-//         public void onCreate (Bundle savedInstanceState){
-//             super.onCreate(savedInstanceState);
-//             if (getArguments() != null) {
+//@Override
+//public void onCreate(Bundle savedInstanceState) {
+//    super.onCreate(savedInstanceState);
+//
+////       // para pegarmos os dados da outra tela pelo id
+//    idGrupo = getActivity()
+//            .getIntent()
+//            .getExtras()
+//            .getInt("idGrupo");
 //
 //
 //             }

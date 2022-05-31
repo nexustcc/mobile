@@ -5,12 +5,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Bundle;
+import android.util.Log;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
 
-    //Define tempo que a tela vai exibir. (tempo em milisegundos)
-    private static int SPLASH_TIME_OUT = 3000;
+    //DEFINE TEMPO QUE A TELA IRÁ EXIBIR  (tempo em milisegundos)
+    private static int SPLASH_TIME_OUT = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +22,8 @@ public class SplashScreenActivity extends AppCompatActivity {
 
             @Override
             public void run() {
-                //Método que será executado uma vez.. Na abertura do app.
-                Intent i = new Intent(SplashScreenActivity.this, FormularioFragment.class);
+                //MÉTODO UTILIZADO UMA VEZ NA ABERTURA DO APP
+                Intent i = new Intent(SplashScreenActivity.this, Login.class);
                 startActivity(i);
 
                 finish();
