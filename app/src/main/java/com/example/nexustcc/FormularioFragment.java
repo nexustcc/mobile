@@ -66,8 +66,65 @@ import retrofit2.Response;
      String observacoesFinais;
      EditText observacoes;
 
-
      private Button btnEnviar;
+
+     @Override
+     public void onCreate(Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+
+         btnEnviar.setOnClickListener(view -> {
+
+             //CRIA O OBJETO DE AVALIAÇAO E RECEBE OS DADOS
+             Avaliacao avaliacao = new Avaliacao();
+
+             /** CARREGA OS DADOS DO FORMULÁRIO NO OBJETO DE MODEL **/
+             avaliacao.setIdAvaliacao(idAvaliacao.);
+             avaliacao.setClareza(clareza);
+             avaliacao.setObjetividade(objetividade);
+             avaliacao.setFluenciaExposicaoIdeias(fluenciaExposicaoIdeias);
+             avaliacao.setDominioConteudo(dominioConteudo);
+             avaliacao.setCapacidadeComunicacao(capacidadeComunicacao);
+             avaliacao.setArgumentacao(argumentacao);
+             avaliacao.setOrganizacao(organizacaoApresentacao);
+             avaliacao.setAproveitamentoRecursos(aproveitamentoRecursos);
+             avaliacao.setPosturaIntegrantes(posturaIntegrantes);
+             avaliacao.setUsoTempo(usoTempo);
+             avaliacao.setObservacoes(observacoes.getText().toString());
+             // COD DO USUÁRIO CADASTRADO NA BASE
+             avaliacao.setTblAvaliacaoIdAvaliacao(1);
+
+             /** PASSAR OS DADOS PARA A APIREST **/
+
+             routerInterface = APIUtil.getGruposInterface();
+             enviarFormulario(avaliacao);
+
+         });
+
+     }
+
+     public void enviarFormulario(Avaliacao livro){
+         //LIGA O MÉTODO addLivro da CLASSE CadastroLivro
+         //COM SUA REPRESENTAÇÃO NA INTERFACE RouterInterface
+
+         Call<Avaliacao> call = routerInterface.enviarFormulario(livro);
+
+         //EXECUSÃO
+         call.enqueue(new Callback<Avaliacao>() {
+             @Override
+             public void onResponse(Call<Avaliacao> call, Response<Avaliacao> response) {
+//                 Toast.makeText(FormularioFragment.this,
+//                         "AVALIAÇÃO REALIZADA COM SUCESSO",
+//                         Toast.LENGTH_LONG).show();
+             }
+
+             @Override
+             public void onFailure(Call<Avaliacao> call, Throwable t) {
+                 Log.d("ERRO-API", t.getMessage());
+
+             }
+         });
+     }
+
 
      @Override
      public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -293,27 +350,7 @@ import retrofit2.Response;
              Log.d("Forms", "Observações: " + observacoesFinais);
 
 
-             /** CRIA UM OBJETO DA MODEL DE AVALIACAO **/
-             Avaliacao avaliacao = new Avaliacao();
 
-             /** CARREGA OS DADOS DO FORMULÁRIO NO OBJETO DE MODEL **/
-             avaliacao.setIdAvaliacao(idAvaliacao);
-             avaliacao.setClareza(clareza);
-             avaliacao.setObjetividade(objetividade);
-             avaliacao.setFluenciaExposicaoIdeias(fluenciaExposicaoIdeias);
-             avaliacao.setDominioConteudo(dominioConteudo);
-             avaliacao.setCapacidadeComunicacao(capacidadeComunicacao);
-             avaliacao.setArgumentacao(argumentacao);
-             avaliacao.setOrganizacao(organizacaoApresentacao);
-             avaliacao.setAproveitamentoRecursos(aproveitamentoRecursos);
-             avaliacao.setPosturaIntegrantes(posturaIntegrantes);
-             avaliacao.setUsoTempo(usoTempo);
-             avaliacao.setObservacoes(observacoes.getText().toString());
-
-             /** PASSAR OS DADOS PARA A APIREST **/
-
-             routerInterface = APIUtil.getGruposInterface();
-//             enviarFormulario(avaliacao);
 
          });
 
@@ -672,18 +709,7 @@ import retrofit2.Response;
 //             return fragment;
 //         }
 //
-//@Override
-//public void onCreate(Bundle savedInstanceState) {
-//    super.onCreate(savedInstanceState);
-//
-////       // para pegarmos os dados da outra tela pelo id
-//    idGrupo = getActivity()
-//            .getIntent()
-//            .getExtras()
-//            .getInt("idGrupo");
-//
-//
-//             }
+
 
 //
 //    @Override

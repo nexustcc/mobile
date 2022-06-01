@@ -48,13 +48,13 @@ public class Login extends AppCompatActivity {
 //            String email = txtEmail.getText().toString();
 //            String senha = txtSenha.getText().toString();
 //
-//            int idAvaliador = APIUtil
+//            int idUsuario = APIUtil
 //                    .getInstance(this)
 //                    .login(email, senha);
 //
-//            if (idAvaliador > 0) {
+//            if (idUsuario > 0) {
 //
-//                Login.setCod_usuario(idAvaliador);
+//                Login.setCod_usuario(idUsuario);
 //
 //                startActivity(
 //                        new Intent(Login.this,
@@ -67,7 +67,7 @@ public class Login extends AppCompatActivity {
 //            }
 //
 //        });
-//
-//
-//        }
-    }
+
+
+        }
+}
