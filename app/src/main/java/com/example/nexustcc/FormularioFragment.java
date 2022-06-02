@@ -3,7 +3,9 @@
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -23,6 +25,7 @@ import com.example.nexustcc.model.Grupos;
 import com.example.nexustcc.remote.APIUtil;
 import com.example.nexustcc.remote.RouterInterface;
 
+import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,8 +37,8 @@ import retrofit2.Response;
 
      /*DECLARAÇÃO DOS ATRIBUTOS*/
      RouterInterface routerInterface;
-     List<Grupos> list = new ArrayList<Grupos>();
-     private final List<String> idSelecionados = new ArrayList<>();
+
+     FragmentActivity context = null;
 
      int idGrupo;
 
@@ -65,65 +68,9 @@ import retrofit2.Response;
      String usoTempo;
      String observacoesFinais;
      EditText observacoes;
+     int tblAvaliacaoIdAvaliacao;
 
      private Button btnEnviar;
-
-     @Override
-     public void onCreate(Bundle savedInstanceState) {
-         super.onCreate(savedInstanceState);
-
-         btnEnviar.setOnClickListener(view -> {
-
-             //CRIA O OBJETO DE AVALIAÇAO E RECEBE OS DADOS
-             Avaliacao avaliacao = new Avaliacao();
-
-             /** CARREGA OS DADOS DO FORMULÁRIO NO OBJETO DE MODEL **/
-             avaliacao.setIdAvaliacao(idAvaliacao.);
-             avaliacao.setClareza(clareza);
-             avaliacao.setObjetividade(objetividade);
-             avaliacao.setFluenciaExposicaoIdeias(fluenciaExposicaoIdeias);
-             avaliacao.setDominioConteudo(dominioConteudo);
-             avaliacao.setCapacidadeComunicacao(capacidadeComunicacao);
-             avaliacao.setArgumentacao(argumentacao);
-             avaliacao.setOrganizacao(organizacaoApresentacao);
-             avaliacao.setAproveitamentoRecursos(aproveitamentoRecursos);
-             avaliacao.setPosturaIntegrantes(posturaIntegrantes);
-             avaliacao.setUsoTempo(usoTempo);
-             avaliacao.setObservacoes(observacoes.getText().toString());
-             // COD DO USUÁRIO CADASTRADO NA BASE
-             avaliacao.setTblAvaliacaoIdAvaliacao(1);
-
-             /** PASSAR OS DADOS PARA A APIREST **/
-
-             routerInterface = APIUtil.getGruposInterface();
-             enviarFormulario(avaliacao);
-
-         });
-
-     }
-
-     public void enviarFormulario(Avaliacao livro){
-         //LIGA O MÉTODO addLivro da CLASSE CadastroLivro
-         //COM SUA REPRESENTAÇÃO NA INTERFACE RouterInterface
-
-         Call<Avaliacao> call = routerInterface.enviarFormulario(livro);
-
-         //EXECUSÃO
-         call.enqueue(new Callback<Avaliacao>() {
-             @Override
-             public void onResponse(Call<Avaliacao> call, Response<Avaliacao> response) {
-//                 Toast.makeText(FormularioFragment.this,
-//                         "AVALIAÇÃO REALIZADA COM SUCESSO",
-//                         Toast.LENGTH_LONG).show();
-             }
-
-             @Override
-             public void onFailure(Call<Avaliacao> call, Throwable t) {
-                 Log.d("ERRO-API", t.getMessage());
-
-             }
-         });
-     }
 
 
      @Override
@@ -172,6 +119,10 @@ import retrofit2.Response;
 
 
          btnEnviar.setOnClickListener(view -> {
+
+
+
+
 
 //             Log.d("TESTE", "CLICK!");
 
@@ -348,35 +299,141 @@ import retrofit2.Response;
              //variavel
              observacoesFinais = observacoes.getText().toString();
              Log.d("Forms", "Observações: " + observacoesFinais);
-
-
-
+//
+//
+//             if (!validate()) {
+//
+//                 Toast.makeText(getActivity(), "PREENCHA TODOS OS CAMPOS", Toast.LENGTH_SHORT).show();
+//
+//             }
 
          });
+
+         /** PROCESSOS DE GRAVAÇÃO DO FORMULÁRIO**/
+
+         /** AÇÃO DE POSITIVE BUTTON **/
+
+         Avaliacao avaliacao = new Avaliacao(
+                 idAvaliacao, tblAvaliacaoIdAvaliacao, objetividade, dominioConteudo,
+                 organizacaoApresentacao, clareza, aproveitamentoRecursos, posturaIntegrantes,
+                 fluenciaExposicaoIdeias, argumentacao, usoTempo, capacidadeComunicacao,
+                 observacoes.getText().toString());
+
+         Call<Avaliacao> call = routerInterface.enviarFormulario(avaliacao, 2);
+
+         //EXECUSÃO
+         call.enqueue(new Callback<Avaliacao>() {
+             @Override
+             public void onResponse(Call<Avaliacao> call, Response<Avaliacao> response) {
+
+                 if (response.isSuccessful()) {
+
+                     Toast.makeText(getActivity(),
+                             "FORMULÁRIO ENVIADO COM SUCESSO",
+                             Toast.LENGTH_LONG);
+                 } else {
+
+
+                     Toast.makeText(getActivity(),
+                             "ERRO PARA ENVIAR FORMULÁRIO",
+                             Toast.LENGTH_LONG);
+
+
+                 }
+             }
+
+             @Override
+             public void onFailure(Call<Avaliacao> call, Throwable t) {
+                 Log.d("ERRO-API", t.getMessage());
+
+             }
+         });
+
 
          addCheckBoxChecked();
          return v;
      }
 
+     public View onCreate(LayoutInflater inflater, ViewGroup container,
+                          Bundle savedInstanceState) {
+         super.onCreate(savedInstanceState);
+
+         context = getActivity();
+
+         /** RECEBENDO OS OBJETOS DE INTERFACE **/
+         View v = inflater.inflate(R.layout.fragment_formulario, container, false);
+         cb01 = (CheckBox) v.findViewById(R.id.cb_clareza_1);
+         cb02 = (CheckBox) v.findViewById(R.id.cb_clareza_2);
+         cb03 = (CheckBox) v.findViewById(R.id.cb_clareza_3);
+         cb04 = (CheckBox) v.findViewById(R.id.cb_objetividade_1);
+         cb05 = (CheckBox) v.findViewById(R.id.cb_objetividade_2);
+         cb06 = (CheckBox) v.findViewById(R.id.cb_objetividade_3);
+         cb07 = (CheckBox) v.findViewById(R.id.cb_exposicao_ideias_1);
+         cb08 = (CheckBox) v.findViewById(R.id.cb_exposicao_ideias_2);
+         cb09 = (CheckBox) v.findViewById(R.id.cb_exposicao_ideias_3);
+         cb10 = (CheckBox) v.findViewById(R.id.cb_dominio_conteudo_1);
+         cb11 = (CheckBox) v.findViewById(R.id.cb_dominio_conteudo_2);
+         cb12 = (CheckBox) v.findViewById(R.id.cb_dominio_conteudo_3);
+         cb13 = (CheckBox) v.findViewById(R.id.cb_capacidade_comunicacao_1);
+         cb14 = (CheckBox) v.findViewById(R.id.cb_capacidade_comunicacao_2);
+         cb15 = (CheckBox) v.findViewById(R.id.cb_capacidade_comunicacao_3);
+         cb16 = (CheckBox) v.findViewById(R.id.cb_argumentacao_1);
+         cb17 = (CheckBox) v.findViewById(R.id.cb_argumentacao_2);
+         cb18 = (CheckBox) v.findViewById(R.id.cb_argumentacao_3);
+         cb19 = (CheckBox) v.findViewById(R.id.cb_organizacao_apresentacao_1);
+         cb20 = (CheckBox) v.findViewById(R.id.cb_organizacao_apresentacao_2);
+         cb21 = (CheckBox) v.findViewById(R.id.cb_organizacao_apresentacao_3);
+         cb22 = (CheckBox) v.findViewById(R.id.cb_aproveitamento_recursos_1);
+         cb23 = (CheckBox) v.findViewById(R.id.cb_aproveitamento_recursos_2);
+         cb24 = (CheckBox) v.findViewById(R.id.cb_aproveitamento_recursos_3);
+         cb25 = (CheckBox) v.findViewById(R.id.cb_postura_integrantes_1);
+         cb26 = (CheckBox) v.findViewById(R.id.cb_postura_integrantes_2);
+         cb27 = (CheckBox) v.findViewById(R.id.cb_postura_integrantes_3);
+         cb28 = (CheckBox) v.findViewById(R.id.cb_uso_do_tempo_1);
+         cb29 = (CheckBox) v.findViewById(R.id.cb_uso_do_tempo_2);
+         cb30 = (CheckBox) v.findViewById(R.id.cb_uso_do_tempo_3);
+         btnEnviar = (Button) v.findViewById(R.id.btnEnviar);
+         observacoes = (EditText) v.findViewById(R.id.edit_text_observacoes);
+
+                     return v;
+
+     } //FINAL DO MÉTODO ONCREATE
+
+
+
+     /**MÉTODO DE VALIDAÇÃO **/
+
+//     private boolean validate() {
+//         if(clareza!= null &&
+//             objetividade!= null &&
+//                 fluenciaExposicaoIdeias!= null &&
+//                 dominioConteudo!= null &&
+//                 capacidadeComunicacao!= null &&
+//                 argumentacao!= null &&
+//                 organizacaoApresentacao!= null &&
+//                 aproveitamentoRecursos!= null &&
+//                 posturaIntegrantes!= null &&
+//                 usoTempo!= null &&
+//                 observacoesFinais!= null) {
+//             Log.d("TESTE", "VALIDADO");
 //
-//     public void enviarFormulario(Avaliacao avaliacao){
+//         } else {
+//             Log.d("TESTE", "ERRO NA VALIDACÃO");
 //
-//         Call<Avaliacao> call = RouterInterface.enviarFormulario(avaliacao);
-//
-//         call.enqueue(new Callback<Grupos>() {
-//             @Override
-//             public void onResponse(Call<Grupos> call, Response<Grupos> response) {
-//                 Toast.makeText(FormularioFragment.this,
-//                         "FORMULÁRIO ENVIADO COM SUCESSO",
-//                         Toast.LENGTH_LONG).show();
-//             }
-//
-//             @Override
-//             public void onFailure(Call<Grupos> call, Throwable t) {
-//                 Log.d("ERRO-API", t.getMessage());
-//
-//             }
-//         });
+//         }
+//         return (
+//                 clareza!= null &&
+//                         objetividade!= null &&
+//                         fluenciaExposicaoIdeias!= null &&
+//                         dominioConteudo!= null &&
+//                         capacidadeComunicacao!= null &&
+//                         argumentacao!= null &&
+//                         organizacaoApresentacao!= null &&
+//                         aproveitamentoRecursos!= null &&
+//                         posturaIntegrantes!= null &&
+//                         usoTempo!= null &&
+//                         observacoesFinais!= null
+//         );
 //     }
 
 

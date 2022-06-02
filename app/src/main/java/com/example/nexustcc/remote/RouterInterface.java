@@ -23,8 +23,8 @@ public interface RouterInterface {
         @GET("mobile/avaliador/listarGrupo/{idGrupo}")
         Call<List<Grupos>>getInformacoesGrupos(@Path("idGrupo") int idGrupo);
 
-        @POST("mobile/avaliador/avaliarGrupo/{idAvaliacao}")
-        Call<Avaliacao> enviarFormulario(@Body Avaliacao avaliacao);
+        @POST("mobile/avaliador/avaliarGrupo/{idAvaliador}")
+        Call<Avaliacao> enviarFormulario(@Body Avaliacao avaliacao, @Path("idAvaliador") int idAvaliador);
 
 
 

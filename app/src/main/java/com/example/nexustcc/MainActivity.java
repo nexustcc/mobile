@@ -45,12 +45,10 @@ public class MainActivity extends AppCompatActivity {
                 menuItem.setChecked(true);
 
                 switch (id) {
-                    case R.id.visaoGeral:
-                        replaceFragment(new VisaoGeralFragment());
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-
-
+//                    case R.id.visaoGeral:
+//                        replaceFragment(new VisaoGeralFragment());
+//                        drawerLayout.closeDrawer(GravityCompat.START);
+//                        break;
 
                     case R.id.formulario:
                         replaceFragment(new FormularioFragment());

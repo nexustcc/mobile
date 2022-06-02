@@ -22,7 +22,7 @@ public class Login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+//
 //        txtEmail = findViewById(R.id.txtEmail);
 //        txtSenha = findViewById(R.id.txtSenha);
 //        btnEntrar = findViewById(R.id.btnEntrar);
@@ -49,12 +49,12 @@ public class Login extends AppCompatActivity {
 //            String senha = txtSenha.getText().toString();
 //
 //            int idUsuario = APIUtil
-//                    .getInstance(this)
+//                    .getGruposInterface(this)
 //                    .login(email, senha);
 //
 //            if (idUsuario > 0) {
 //
-//                Login.setCod_usuario(idUsuario);
+//                Login.setId_usuario(idUsuario);
 //
 //                startActivity(
 //                        new Intent(Login.this,
@@ -67,7 +67,20 @@ public class Login extends AppCompatActivity {
 //            }
 //
 //        });
+//
+//
+//        }
+//
+//    public static int getId_usuario() {
+//        return id_usuario;
+//    }
+//
+//    private static void setId_usuario(int idUsuario) {
+//
+//      Login.id_usuario = id_usuario;
+//    }
+//
+//    private static int id_usuario;
 
-
-        }
-}
+    }
+    }

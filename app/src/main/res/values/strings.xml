@@ -18,5 +18,11 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="mensagem_envio_formulario">VOCÊ ESTÁ AVALIANDO UM GRUPO</string>
+    <string name="titulo_envio_formulario">ENVIO DE FORMULÁRIO</string>
+    <string name="mensagem_cadastro_usuario">VOCÊ ESTÁ ENVIANDO UM FORMULÁRIO</string>
+    <string name="salvar">SALVAR</string>
+    <string name="enviar">ENVIAR</string>
+    <string name="cancelar">CANCELAR</string>
 
 </resources>
