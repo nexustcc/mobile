@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -45,10 +46,13 @@ public class MainActivity extends AppCompatActivity {
                 menuItem.setChecked(true);
 
                 switch (id) {
-//                    case R.id.visaoGeral:
-//                        replaceFragment(new VisaoGeralFragment());
-//                        drawerLayout.closeDrawer(GravityCompat.START);
-//                        break;
+
+
+                    case R.id.visaoGeral:
+                        replaceFragment(new VisaoGeralFragment());
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+
 
                     case R.id.formulario:
                         replaceFragment(new FormularioFragment());

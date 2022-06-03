@@ -2,6 +2,7 @@ package com.example.nexustcc.remote;
 
 import com.example.nexustcc.model.Avaliacao;
 import com.example.nexustcc.model.Grupos;
+import com.example.nexustcc.model.Usuario;
 
 import java.util.List;
 
@@ -23,8 +24,12 @@ public interface RouterInterface {
         @GET("mobile/avaliador/listarGrupo/{idGrupo}")
         Call<List<Grupos>>getInformacoesGrupos(@Path("idGrupo") int idGrupo);
 
-        @POST("mobile/avaliador/avaliarGrupo/{idAvaliador}")
-        Call<Avaliacao> enviarFormulario(@Body Avaliacao avaliacao, @Path("idAvaliador") int idAvaliador);
+        @POST("mobile/avaliador/avaliarGrupo/{idAvaliador}/{idGrupo}")
+        Call<Avaliacao> enviarFormulario(@Body Avaliacao avaliacao, @Path("idAvaliador") int idAvaliador, @Path ("idGrupo") int idGrupo);
+
+        //requisição de leitura
+        @GET("/mobile/login/{idUsuario}")
+        Call<List<Usuario>>getUsuario();
 
 
 

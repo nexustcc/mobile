@@ -1,17 +1,24 @@
 package com.example.nexustcc;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.nexustcc.model.Grupos;
 import com.example.nexustcc.remote.APIUtil;
@@ -26,10 +33,20 @@ import retrofit2.Response;
 
 public class VisaoGeralFragment extends Fragment {
 
+    private Context mContext;
+
+    FragmentActivity context = null;
+
+    public void FirstFragment() {
+        // Required empty public constructor
+    }
+
     /*DECLARAÇÃO DOS ATRIBUTOS*/
     RouterInterface routerInterface;
     RecyclerView recyclerView = null;
     List<Grupos> list = new ArrayList<Grupos>();
+
+    private Button btnAvaliarGrupo;
 
     int idGrupo;
 
@@ -37,9 +54,11 @@ public class VisaoGeralFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_visao_geral, container, false);
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
+        btnAvaliarGrupo = (Button) v.findViewById(R.id.btnAvaliarGrupo);
 
         return v;
 
@@ -98,9 +117,18 @@ public class VisaoGeralFragment extends Fragment {
             }
         });
 
+        btnAvaliarGrupo.setOnClickListener(view -> {
+            //passar o contexto e a tela
+            Intent telaVisaoGeralFragment = new Intent(getActivity(), FormularioFragment.class);
+            //para executar
+            startActivity(telaVisaoGeralFragment);
+        }); // FIM DO BOTAO P AVALIAR
+
 
 
     } //FIM DO MÉTODO ONCREATE
+
+
 
     /*CLASSE DE ADAPTER DA RECYCLERVIEW*/
     class GrupoAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {

@@ -3,10 +3,16 @@
 
 
     <group android:checkableBehavior="single">
-<!--        <item-->
-<!--            android:id="@+id/visaoGeral"-->
-<!--            android:icon="@drawable/ic_visao_geral"-->
-<!--            android:title="VISÃO GERAL"></item>-->
+
+        <item
+            android:id="@+id/listagemGrupo"
+            android:icon="@drawable/ic_visao_geral"
+            android:title="GRUPOS DE TCC"></item>
+
+        <item
+            android:id="@+id/visaoGeral"
+            android:icon="@drawable/ic_visao_geral"
+            android:title="VISÃO GERAL"></item>
 
 
         <item

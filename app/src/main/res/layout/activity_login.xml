@@ -72,10 +72,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
-                android:drawableRight="@drawable/ic_senha"
+               android:password="true"
                 android:textColor="@color/blue_4" />
-            <!--            style="@style/StyledTilEditTextTheme"-->
-            //verificar cor dos editTexts
+
 
 
             <Button
