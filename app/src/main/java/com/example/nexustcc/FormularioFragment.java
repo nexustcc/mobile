@@ -1,9 +1,9 @@
  package com.example.nexustcc;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,10 +24,6 @@ import com.example.nexustcc.model.Avaliacao;
 import com.example.nexustcc.model.Grupos;
 import com.example.nexustcc.remote.APIUtil;
 import com.example.nexustcc.remote.RouterInterface;
-
-import java.text.BreakIterator;
-import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -69,6 +65,12 @@ import retrofit2.Response;
      int tblAvaliacaoIdAvaliacao;
 
      private Button btnEnviar;
+
+
+
+     public FormularioFragment() {
+
+     }
 
 
      @Override
@@ -297,6 +299,11 @@ import retrofit2.Response;
              //variavel
              observacoesFinais = observacoes.getText().toString();
              Log.d("Forms", "Observações: " + observacoesFinais);
+
+             Intent intent = new Intent(getContext(), ListagemGrupo.class);
+             //Log.d("ID0GRUPO", String.valueOf(idGrupo));
+             startActivity(intent);
+
 //
 //
 //             if (!validate()) {
@@ -316,7 +323,7 @@ import retrofit2.Response;
                      fluenciaExposicaoIdeias, argumentacao, usoTempo, capacidadeComunicacao,
                      observacoes.getText().toString());
 
-             Call<Avaliacao> call = routerInterface.enviarFormulario(avaliacao, 1, 2);
+             Call<Avaliacao> call = routerInterface.enviarFormulario(avaliacao, 1, 5);
 
              //EXECUSÃO
              call.enqueue(new Callback<Avaliacao>() {

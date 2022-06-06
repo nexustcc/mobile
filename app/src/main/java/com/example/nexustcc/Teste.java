@@ -5,24 +5,28 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
 public class Teste extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teste);
 
 
-
-//        int idGrupo = getIntent().getExtras().getInt("idGrupo");
+        int idGrupo = getIntent().getExtras().getInt("idGrupo");
 //        Log.d("id", String.valueOf(idGrupo));
 
-        replaceFragment(new VisaoGeralFragment());
+        replaceFragment(new VisaoGeralFragment(Teste.this));
+//        replaceFragment(new FormularioFragment());
 
     }
+
+
+
+    public Teste() {}
 
 
 
@@ -32,4 +36,6 @@ public class Teste extends AppCompatActivity {
         fragmentTransaction.replace(R.id.frameLayout, fragment);
         fragmentTransaction.commit();
     }
+
+
 }

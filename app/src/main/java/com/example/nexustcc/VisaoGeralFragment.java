@@ -1,11 +1,13 @@
 package com.example.nexustcc;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
@@ -24,6 +26,7 @@ import com.example.nexustcc.model.Grupos;
 import com.example.nexustcc.remote.APIUtil;
 import com.example.nexustcc.remote.RouterInterface;
 
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,8 +38,6 @@ public class VisaoGeralFragment extends Fragment {
 
     private Context mContext;
 
-    FragmentActivity context = null;
-
     public void FirstFragment() {
         // Required empty public constructor
     }
@@ -46,6 +47,7 @@ public class VisaoGeralFragment extends Fragment {
     RecyclerView recyclerView = null;
     List<Grupos> list = new ArrayList<Grupos>();
 
+
     private Button btnAvaliarGrupo;
 
     int idGrupo;
@@ -53,25 +55,35 @@ public class VisaoGeralFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_visao_geral, container, false);
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
-        btnAvaliarGrupo = (Button) v.findViewById(R.id.btnAvaliarGrupo);
+        //View viewGeral = inflater.inflate(R.layout.item_container_visao_geral, container, false);
+        //btnAvaliarGrupo = viewGeral.findViewById(R.id.btnAvaliarGrupo);
+        //Log.d("xptoo", btnAvaliarGrupo.toString());
 
+        //btnAvaliarGrupo.setOnClickListener(view -> Log.d("xptow", "CLICOU"));
+/*
+        btnAvaliarGrupo.setOnClickListener(view -> {
+            Log.d("xpto", "CLICOU NO BOTAO");
+            //passar o contexto e a tela
+            // Intent telaVisaoGeralFragment = new Intent(
+            //        getActivity(), FormularioFragment.class);
+            //para executar
+            // startActivity(telaVisaoGeralFragment);
+        }); // FIM DO BOTAO P AVALIAR
+*/
         return v;
 
     }
 
-    public VisaoGeralFragment() {
-        // Required empty public constructor
-
+    public VisaoGeralFragment(Context context) {
+        this.mContext = context;
     }
 
     // TODO: Rename and change types and number of parameters
-    public static VisaoGeralFragment newInstance(String param1, String param2) {
-        VisaoGeralFragment fragment = new VisaoGeralFragment();
+    public static VisaoGeralFragment newInstance(String param1, String param2, Context context) {
+        VisaoGeralFragment fragment = new VisaoGeralFragment(context);
         Bundle args = new Bundle();
 
         fragment.setArguments(args);
@@ -116,14 +128,6 @@ public class VisaoGeralFragment extends Fragment {
                 Log.d("ERRO-CALL", t.getMessage());
             }
         });
-
-        btnAvaliarGrupo.setOnClickListener(view -> {
-            //passar o contexto e a tela
-            Intent telaVisaoGeralFragment = new Intent(getActivity(), FormularioFragment.class);
-            //para executar
-            startActivity(telaVisaoGeralFragment);
-        }); // FIM DO BOTAO P AVALIAR
-
 
 
     } //FIM DO MÉTODO ONCREATE
@@ -188,6 +192,23 @@ public class VisaoGeralFragment extends Fragment {
                 -txtTemaDoProjeto
                 -txtDescricaoProjeto */
             public void setGrupoData(Grupos grupo) {
+
+
+                itemView.setOnClickListener(view -> {
+
+                    //o parâmetro é aonde o alertDialog será executado
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity())
+                            .setMessage("ESCOLHA A AÇÃO QUE DESEJA EXECUTAR:")
+                            .setPositiveButton("AVALIAR GRUPO", (dialog1, witch)->{
+                                //redireciona para tela de formulario
+                                Intent intent = new Intent(getContext(), MainActivity.class);
+                                intent.putExtra("idGrupo", idGrupo);
+                                //Log.d("ID0GRUPO", String.valueOf(idGrupo));
+                                startActivity(intent);
+                            })
+                            .setNegativeButton("CANCELAR", (dialog1, witch)->{});
+                    alertDialog.show();
+                });
 
                     Log.d("GRUPOS", String.valueOf(grupo.getNomeGrupo()));
                     Log.d("GRUPOS", String.valueOf(grupo.getTemaProjeto()));

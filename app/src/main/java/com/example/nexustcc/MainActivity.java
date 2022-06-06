@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -48,16 +49,16 @@ public class MainActivity extends AppCompatActivity {
                 switch (id) {
 
 
-                    case R.id.visaoGeral:
-                        replaceFragment(new VisaoGeralFragment());
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
+                    //case R.id.visaoGeral:
+                        // Log.d("xpto", "VISAO GERAL");
+                        // replaceFragment(new VisaoGeralFragment(MainActivity.this));
+                        // drawerLayout.closeDrawer(GravityCompat.START);
+                      //  break;
 
 
-                    case R.id.formulario:
-                        replaceFragment(new FormularioFragment());
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
+                   case R.id.formulario:
+                       replaceFragment(new FormularioFragment());
+                       drawerLayout.closeDrawer(GravityCompat.START);break;
 
                 }
 
