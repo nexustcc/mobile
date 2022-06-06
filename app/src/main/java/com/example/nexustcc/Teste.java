@@ -15,20 +15,13 @@ public class Teste extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teste);
 
-
         int idGrupo = getIntent().getExtras().getInt("idGrupo");
-//        Log.d("id", String.valueOf(idGrupo));
 
         replaceFragment(new VisaoGeralFragment(Teste.this));
-//        replaceFragment(new FormularioFragment());
 
     }
 
-
-
     public Teste() {}
-
-
 
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();

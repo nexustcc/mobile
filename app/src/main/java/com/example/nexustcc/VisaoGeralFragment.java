@@ -58,21 +58,7 @@ public class VisaoGeralFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_visao_geral, container, false);
         recyclerView = (RecyclerView) v.findViewById(R.id.recyclerView);
-        //View viewGeral = inflater.inflate(R.layout.item_container_visao_geral, container, false);
-        //btnAvaliarGrupo = viewGeral.findViewById(R.id.btnAvaliarGrupo);
-        //Log.d("xptoo", btnAvaliarGrupo.toString());
 
-        //btnAvaliarGrupo.setOnClickListener(view -> Log.d("xptow", "CLICOU"));
-/*
-        btnAvaliarGrupo.setOnClickListener(view -> {
-            Log.d("xpto", "CLICOU NO BOTAO");
-            //passar o contexto e a tela
-            // Intent telaVisaoGeralFragment = new Intent(
-            //        getActivity(), FormularioFragment.class);
-            //para executar
-            // startActivity(telaVisaoGeralFragment);
-        }); // FIM DO BOTAO P AVALIAR
-*/
         return v;
 
     }
