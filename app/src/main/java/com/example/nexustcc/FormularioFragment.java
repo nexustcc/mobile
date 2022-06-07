@@ -323,7 +323,7 @@ import retrofit2.Response;
                      fluenciaExposicaoIdeias, argumentacao, usoTempo, capacidadeComunicacao,
                      observacoes.getText().toString());
 
-             Call<Avaliacao> call = routerInterface.enviarFormulario(avaliacao, 1, 5);
+             Call<Avaliacao> call = routerInterface.enviarFormulario(avaliacao, 1, 3);
 
              //EXECUSÃO
              call.enqueue(new Callback<Avaliacao>() {
